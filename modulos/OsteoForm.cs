@@ -40,7 +40,7 @@ namespace PausasActivas.Modulos
             this.Text = "Prevención Osteomuscular";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 
-            // TODO Equipo 2: construir la UI aquí
+            // TODO(Frankelly) Equipo 2: construir la UI aquí
         }
 
 
