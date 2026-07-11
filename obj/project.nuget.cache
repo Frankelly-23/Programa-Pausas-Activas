@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "lPy83/6C12A=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\forms.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\adeli\\.nuget\\packages\\guna.ui2.winforms\\2.0.4.8\\guna.ui2.winforms.2.0.4.8.nupkg.sha512",
+    "C:\\Users\\adeli\\.nuget\\packages\\system.management\\7.0.0\\system.management.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
