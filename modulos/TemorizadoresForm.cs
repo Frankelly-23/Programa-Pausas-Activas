@@ -123,6 +123,7 @@ namespace PausasActivas.Modulos
             guna2Button1.Size = new System.Drawing.Size(204, 66);
             guna2Button1.TabIndex = 3;
             guna2Button1.Text = "⏸ Pausar";
+            guna2Button1.Click += guna2Button1_Click;
             // 
             // guna2Button2
             // 
@@ -272,9 +273,23 @@ namespace PausasActivas.Modulos
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form mainForm = new MainForm();
+            var mainForm = new MainForm();
             mainForm.ShowDialog();
             this.Hide();
+        }
+
+
+        //Boton de pausar y reanudar
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            if (guna2Button1.Text == "⏸ Pausar")
+            {
+                guna2Button1.Text = "⏩ Reanudar";
+            }
+            else
+            {
+                guna2Button1.Text = "⏸ Pausar";
+            }
         }
     }
 }

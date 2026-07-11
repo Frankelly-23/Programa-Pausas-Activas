@@ -1,0 +1,57 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|c:\\users\\adeli\\documents\\college\\6th semester\\ergonomia\\programa-pausas-activas\\modulos\\temorizadoresform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|solutionrelative:modulos\\temorizadoresform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|c:\\users\\adeli\\documents\\college\\6th semester\\ergonomia\\programa-pausas-activas\\modulos\\temorizadoresform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|solutionrelative:modulos\\temorizadoresform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TemorizadoresForm.cs",
+              "DocumentMoniker": "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\modulos\\TemorizadoresForm.cs",
+              "RelativeDocumentMoniker": "modulos\\TemorizadoresForm.cs",
+              "ToolTip": "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\modulos\\TemorizadoresForm.cs*",
+              "RelativeToolTip": "modulos\\TemorizadoresForm.cs*",
+              "ViewState": "AgIAABgBAAAAAAAAAAAewCIBAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T18:13:51.386Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TemorizadoresForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\modulos\\TemorizadoresForm.cs",
+              "RelativeDocumentMoniker": "modulos\\TemorizadoresForm.cs",
+              "ToolTip": "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\modulos\\TemorizadoresForm.cs [Design]*",
+              "RelativeToolTip": "modulos\\TemorizadoresForm.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T18:11:52.422Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
