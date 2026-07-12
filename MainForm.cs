@@ -8,7 +8,7 @@ namespace PausasActivas
     {
         public MainForm()
         {
-            InitializeComponent();
+                InitializeComponent();
         }
 
         // ── Equipo 1 ──────────────────────────────────────────

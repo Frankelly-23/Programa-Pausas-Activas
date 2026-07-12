@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\modulos\\temorizadoresform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|solutionrelative:modulos\\temorizadoresform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|c:\\users\\adeli\\documents\\college\\6th semester\\ergonomia\\programa-pausas-activas\\modulos\\temorizadoresform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|solutionrelative:modulos\\temorizadoresform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|c:\\users\\adeli\\documents\\college\\6th semester\\ergonomia\\programa-pausas-activas\\modulos\\temorizadoresform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|solutionrelative:modulos\\temorizadoresform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|c:\\users\\adeli\\documents\\college\\6th semester\\ergonomia\\programa-pausas-activas\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,28 +22,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\MainForm.cs",
+              "RelativeDocumentMoniker": "MainForm.cs",
+              "ToolTip": "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\MainForm.cs",
+              "RelativeToolTip": "MainForm.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBEAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T18:34:08.053Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "TemorizadoresForm.cs",
               "DocumentMoniker": "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\modulos\\TemorizadoresForm.cs",
               "RelativeDocumentMoniker": "modulos\\TemorizadoresForm.cs",
               "ToolTip": "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\modulos\\TemorizadoresForm.cs",
               "RelativeToolTip": "modulos\\TemorizadoresForm.cs",
-              "ViewState": "AgIAABgBAAAAAAAAAAAewCYBAAABAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAQwEwBAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-11T18:13:51.386Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "TemorizadoresForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\modulos\\TemorizadoresForm.cs",
               "RelativeDocumentMoniker": "modulos\\TemorizadoresForm.cs",
