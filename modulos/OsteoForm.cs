@@ -272,10 +272,11 @@ namespace PausasActivas.Modulos
 
         }
 
+
+        //Manejo de imagenes aquí yts
         private void botonCuello_Click(object sender, System.EventArgs e)
         {
-            pictureBox1.Image = Image.FromFile(@"modulos\ImagenesOsteo\Cuello 1.png");
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            
 
             LabelEstiramiento.Text = "Estiramiento de Cuello";
             LabelPaso.Text = "Paso 1 de 3";
