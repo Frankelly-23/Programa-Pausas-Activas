@@ -22,4 +22,3 @@ C:\Users\hero1\source\repos\Programa-Pausas-Activas\obj\Debug\net10.0-windows\fo
 C:\Users\hero1\source\repos\Programa-Pausas-Activas\obj\Debug\net10.0-windows\forms.genruntimeconfig.cache
 C:\Users\hero1\source\repos\Programa-Pausas-Activas\obj\Debug\net10.0-windows\ref\forms.dll
 C:\Users\hero1\source\repos\Programa-Pausas-Activas\obj\Debug\net10.0-windows\forms.Properties.Resources.resources
-C:\Users\hero1\source\repos\Programa-Pausas-Activas\bin\Debug\net10.0-windows\modulos\ImagenesOsteo\Cuello 1.png
