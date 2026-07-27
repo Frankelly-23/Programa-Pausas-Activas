@@ -31,6 +31,7 @@ namespace PausasActivas.Modulos
         private System.Windows.Forms.PictureBox pictureBox1;
         private Timer timer1;
         private Guna.UI2.WinForms.Guna2ProgressBar TemporizadorBar;
+        private Label Volver;
         private System.ComponentModel.IContainer components;
 
         public OsteoForm()
@@ -46,20 +47,20 @@ namespace PausasActivas.Modulos
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             botonCuello = new Guna.UI2.WinForms.Guna2Button();
             BotonMuñeca = new Guna.UI2.WinForms.Guna2Button();
@@ -72,6 +73,7 @@ namespace PausasActivas.Modulos
             BotonAnterior = new Guna.UI2.WinForms.Guna2Button();
             timer1 = new Timer(components);
             TemporizadorBar = new Guna.UI2.WinForms.Guna2ProgressBar();
+            Volver = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -91,7 +93,7 @@ namespace PausasActivas.Modulos
             botonCuello.Animated = true;
             botonCuello.BackColor = Color.Transparent;
             botonCuello.BorderRadius = 20;
-            botonCuello.CustomizableEdges = customizableEdges1;
+            botonCuello.CustomizableEdges = customizableEdges15;
             botonCuello.DisabledState.BorderColor = Color.DarkGray;
             botonCuello.DisabledState.CustomBorderColor = Color.DarkGray;
             botonCuello.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -101,7 +103,7 @@ namespace PausasActivas.Modulos
             botonCuello.ForeColor = Color.Black;
             botonCuello.Location = new Point(89, 117);
             botonCuello.Name = "botonCuello";
-            botonCuello.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            botonCuello.ShadowDecoration.CustomizableEdges = customizableEdges16;
             botonCuello.Size = new Size(221, 79);
             botonCuello.TabIndex = 2;
             botonCuello.Text = "Cuello";
@@ -112,7 +114,7 @@ namespace PausasActivas.Modulos
             BotonMuñeca.Animated = true;
             BotonMuñeca.BackColor = Color.Transparent;
             BotonMuñeca.BorderRadius = 20;
-            BotonMuñeca.CustomizableEdges = customizableEdges3;
+            BotonMuñeca.CustomizableEdges = customizableEdges17;
             BotonMuñeca.DisabledState.BorderColor = Color.DarkGray;
             BotonMuñeca.DisabledState.CustomBorderColor = Color.DarkGray;
             BotonMuñeca.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -122,7 +124,7 @@ namespace PausasActivas.Modulos
             BotonMuñeca.ForeColor = Color.Black;
             BotonMuñeca.Location = new Point(352, 117);
             BotonMuñeca.Name = "BotonMuñeca";
-            BotonMuñeca.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            BotonMuñeca.ShadowDecoration.CustomizableEdges = customizableEdges18;
             BotonMuñeca.Size = new Size(221, 79);
             BotonMuñeca.TabIndex = 3;
             BotonMuñeca.Text = "Muñecas";
@@ -133,7 +135,7 @@ namespace PausasActivas.Modulos
             BotonEspalda.Animated = true;
             BotonEspalda.BackColor = Color.Transparent;
             BotonEspalda.BorderRadius = 20;
-            BotonEspalda.CustomizableEdges = customizableEdges5;
+            BotonEspalda.CustomizableEdges = customizableEdges19;
             BotonEspalda.DisabledState.BorderColor = Color.DarkGray;
             BotonEspalda.DisabledState.CustomBorderColor = Color.DarkGray;
             BotonEspalda.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -143,7 +145,7 @@ namespace PausasActivas.Modulos
             BotonEspalda.ForeColor = Color.Black;
             BotonEspalda.Location = new Point(627, 117);
             BotonEspalda.Name = "BotonEspalda";
-            BotonEspalda.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            BotonEspalda.ShadowDecoration.CustomizableEdges = customizableEdges20;
             BotonEspalda.Size = new Size(221, 79);
             BotonEspalda.TabIndex = 4;
             BotonEspalda.Text = "Espalda";
@@ -184,7 +186,7 @@ namespace PausasActivas.Modulos
             BotonSiguiente.Animated = true;
             BotonSiguiente.BackColor = Color.Transparent;
             BotonSiguiente.BorderRadius = 20;
-            BotonSiguiente.CustomizableEdges = customizableEdges7;
+            BotonSiguiente.CustomizableEdges = customizableEdges21;
             BotonSiguiente.DisabledState.BorderColor = Color.DarkGray;
             BotonSiguiente.DisabledState.CustomBorderColor = Color.DarkGray;
             BotonSiguiente.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -195,7 +197,7 @@ namespace PausasActivas.Modulos
             BotonSiguiente.ForeColor = Color.Black;
             BotonSiguiente.Location = new Point(579, 620);
             BotonSiguiente.Name = "BotonSiguiente";
-            BotonSiguiente.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            BotonSiguiente.ShadowDecoration.CustomizableEdges = customizableEdges22;
             BotonSiguiente.Size = new Size(159, 65);
             BotonSiguiente.TabIndex = 12;
             BotonSiguiente.Text = "Siguiente >";
@@ -206,7 +208,7 @@ namespace PausasActivas.Modulos
             BotonPausa.Animated = true;
             BotonPausa.BackColor = Color.Transparent;
             BotonPausa.BorderRadius = 20;
-            BotonPausa.CustomizableEdges = customizableEdges9;
+            BotonPausa.CustomizableEdges = customizableEdges23;
             BotonPausa.DisabledState.BorderColor = Color.DarkGray;
             BotonPausa.DisabledState.CustomBorderColor = Color.DarkGray;
             BotonPausa.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -217,7 +219,7 @@ namespace PausasActivas.Modulos
             BotonPausa.ForeColor = Color.Black;
             BotonPausa.Location = new Point(427, 620);
             BotonPausa.Name = "BotonPausa";
-            BotonPausa.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            BotonPausa.ShadowDecoration.CustomizableEdges = customizableEdges24;
             BotonPausa.Size = new Size(146, 65);
             BotonPausa.TabIndex = 11;
             BotonPausa.Text = "II Pausar";
@@ -228,7 +230,7 @@ namespace PausasActivas.Modulos
             BotonAnterior.Animated = true;
             BotonAnterior.BackColor = Color.Transparent;
             BotonAnterior.BorderRadius = 20;
-            BotonAnterior.CustomizableEdges = customizableEdges11;
+            BotonAnterior.CustomizableEdges = customizableEdges25;
             BotonAnterior.DisabledState.BorderColor = Color.DarkGray;
             BotonAnterior.DisabledState.CustomBorderColor = Color.DarkGray;
             BotonAnterior.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -239,7 +241,7 @@ namespace PausasActivas.Modulos
             BotonAnterior.ForeColor = Color.Black;
             BotonAnterior.Location = new Point(271, 620);
             BotonAnterior.Name = "BotonAnterior";
-            BotonAnterior.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            BotonAnterior.ShadowDecoration.CustomizableEdges = customizableEdges26;
             BotonAnterior.Size = new Size(150, 65);
             BotonAnterior.TabIndex = 10;
             BotonAnterior.Text = "< Anterior";
@@ -252,23 +254,36 @@ namespace PausasActivas.Modulos
             // TemporizadorBar
             // 
             TemporizadorBar.BorderRadius = 20;
-            TemporizadorBar.CustomizableEdges = customizableEdges13;
+            TemporizadorBar.CustomizableEdges = customizableEdges27;
             TemporizadorBar.FillColor = Color.FromArgb(190, 198, 211);
             TemporizadorBar.Location = new Point(50, 479);
             TemporizadorBar.Name = "TemporizadorBar";
             TemporizadorBar.ProgressColor = Color.FromArgb(109, 157, 226);
             TemporizadorBar.ProgressColor2 = Color.FromArgb(15, 3, 98);
-            TemporizadorBar.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            TemporizadorBar.ShadowDecoration.CustomizableEdges = customizableEdges28;
             TemporizadorBar.Size = new Size(473, 70);
             TemporizadorBar.Style = ProgressBarStyle.Continuous;
             TemporizadorBar.TabIndex = 13;
             TemporizadorBar.Text = "guna2ProgressBar1";
             TemporizadorBar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
+            // Volver
+            // 
+            Volver.AutoSize = true;
+            Volver.Font = new Font("Lora", 28.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Volver.ForeColor = Color.FromArgb(16, 3, 99);
+            Volver.Location = new Point(12, 9);
+            Volver.Name = "Volver";
+            Volver.Size = new Size(73, 71);
+            Volver.TabIndex = 14;
+            Volver.Text = "←";
+            Volver.Click += Volver_Click;
+            // 
             // OsteoForm
             // 
             BackColor = Color.FromArgb(243, 248, 253);
             ClientSize = new Size(934, 697);
+            Controls.Add(Volver);
             Controls.Add(TemporizadorBar);
             Controls.Add(BotonSiguiente);
             Controls.Add(BotonPausa);
@@ -305,6 +320,8 @@ namespace PausasActivas.Modulos
             paso = 1;
             paso_total = 5;
 
+            ActivarBoton(botonCuello);
+
             BotonAnterior.Enabled = true;
             BotonSiguiente.Enabled = true;
             BotonPausa.Enabled = true;
@@ -322,8 +339,12 @@ namespace PausasActivas.Modulos
 
         private void BotonMuñeca_Click(object sender, System.EventArgs e)
         {
+            // Configuración inicial para el estiramiento de muñecas
             paso = 1;
             paso_total = 5;
+
+            ActivarBoton(BotonMuñeca);
+
 
             BotonAnterior.Enabled = true;
             BotonSiguiente.Enabled = true;
@@ -342,8 +363,11 @@ namespace PausasActivas.Modulos
 
         private void BotonEspalda_Click(object sender, System.EventArgs e)
         {
+            // Configuración inicial para el estiramiento de espalda
             paso = 1;
             paso_total = 5;
+
+            ActivarBoton(BotonEspalda);
 
             BotonAnterior.Enabled = true;
             BotonSiguiente.Enabled = true;
@@ -419,6 +443,21 @@ namespace PausasActivas.Modulos
             }
         }
 
-       
+        private void ActivarBoton(Guna.UI2.WinForms.Guna2Button botonActivo)
+        {
+            // Color normal para todos
+            botonCuello.FillColor = Color.FromArgb(109, 158, 226);
+            BotonMuñeca.FillColor = Color.FromArgb(109, 158, 226);
+            BotonEspalda.FillColor = Color.FromArgb(109, 158, 226);
+
+            // Color del botón seleccionado
+            botonActivo.FillColor = Color.FromArgb(16, 3, 99);
+            botonActivo.ForeColor = Color.White;
+        }
+
+        private void Volver_Click(object sender, System.EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\hero1\\source\\repos\\Programa-Pausas-Activas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|C:\\Users\\hero1\\source\\repos\\Programa-Pausas-Activas\\modulos\\osteoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|solutionrelative:modulos\\osteoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|c:\\users\\hero1\\source\\repos\\programa-pausas-activas\\modulos\\osteoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|solutionrelative:modulos\\osteoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|c:\\users\\hero1\\source\\repos\\programa-pausas-activas\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|C:\\Users\\hero1\\source\\repos\\Programa-Pausas-Activas\\modulos\\osteoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|solutionrelative:modulos\\osteoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|c:\\users\\hero1\\source\\repos\\programa-pausas-activas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,17 +30,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "OsteoForm.cs",
               "DocumentMoniker": "C:\\Users\\hero1\\source\\repos\\Programa-Pausas-Activas\\modulos\\OsteoForm.cs",
               "RelativeDocumentMoniker": "modulos\\OsteoForm.cs",
               "ToolTip": "C:\\Users\\hero1\\source\\repos\\Programa-Pausas-Activas\\modulos\\OsteoForm.cs*",
               "RelativeToolTip": "modulos\\OsteoForm.cs*",
-              "ViewState": "AgIAAGABAAAAAAAAAAAswF8BAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAAL4BAAAAAAAAAADwv8sBAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-07T13:36:29.287Z",
               "IsPinned": true,
@@ -56,13 +56,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "MainForm.cs",
               "DocumentMoniker": "C:\\Users\\hero1\\source\\repos\\Programa-Pausas-Activas\\MainForm.cs",
               "RelativeDocumentMoniker": "MainForm.cs",
               "ToolTip": "C:\\Users\\hero1\\source\\repos\\Programa-Pausas-Activas\\MainForm.cs",
               "RelativeToolTip": "MainForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAmwB4AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-14T20:55:52.919Z",
               "EditorCaption": ""
@@ -94,7 +94,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "OsteoForm.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\hero1\\source\\repos\\Programa-Pausas-Activas\\modulos\\OsteoForm.cs",
               "RelativeDocumentMoniker": "modulos\\OsteoForm.cs",
