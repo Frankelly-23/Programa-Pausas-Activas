@@ -1,3 +1,4 @@
+using System;
 using Microsoft.VisualBasic.ApplicationServices;
 using System.Drawing;
 using System.Reflection;
@@ -40,7 +41,7 @@ namespace PausasActivas.Modulos
             this.Text = "Prevención Osteomuscular";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 
-            // TODO(Frankelly) Equipo 2: construir la UI aquí
+            // TODO Equipo 2: construir la UI aquí
         }
 
 
@@ -313,80 +314,110 @@ namespace PausasActivas.Modulos
         //Manejo de imagenes aquí yts
         int paso;
         int paso_total;
-        private void botonCuello_Click(object sender, System.EventArgs e)
 
+        // Carpeta del estiramiento actualmente seleccionado (p.ej. "Cuello", "Cuello")
+        string carpetaActual;
+        string prefijoArchivoActual;
+        bool completado;
+
+        // Ruta base donde viven las carpetas de imágenes, relativa al ejecutable
+        private static readonly string RutaBaseImagenes =
+            Path.Combine(AppContext.BaseDirectory, "modulos", "ImagenesOsteo");
+
+        private static readonly string RutaImagenCompletado =
+            Path.Combine(RutaBaseImagenes, "Completado.png");
+
+        private void CargarImagenPaso()
         {
-            // Configuración inicial para el estiramiento de cuello
-            paso = 1;
-            paso_total = 5;
+            if (string.IsNullOrEmpty(carpetaActual))
+                return;
 
-            ActivarBoton(botonCuello);
+            string rutaImagen = Path.Combine(RutaBaseImagenes, carpetaActual, $"{prefijoArchivoActual}{paso}.jpg");
+            MostrarImagenDesdeArchivo(rutaImagen);
+        }
+
+        private void MostrarImagenDesdeArchivo(string rutaImagen)
+        {
+            // Liberamos la imagen anterior para no dejar el archivo bloqueado ni fugar memoria
+            var imagenAnterior = pictureBox1.Image;
+            pictureBox1.Image = null;
+            imagenAnterior?.Dispose();
+
+            if (File.Exists(rutaImagen))
+            {
+                using (var stream = new FileStream(rutaImagen, FileMode.Open, FileAccess.Read))
+                {
+                    pictureBox1.Image = Image.FromStream(stream);
+                }
+                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            }
+        }
+
+        private void MostrarCompletado()
+        {
+            timer1.Stop();
+            completado = true;
+
+            LabelEstiramiento.Text = "¡Estiramiento completado!";
+            LabelPaso.Text = $"Paso {paso_total} de {paso_total}";
+            TemporizadorBar.Value = TemporizadorBar.Maximum;
+
+            MostrarImagenDesdeArchivo(RutaImagenCompletado);
+
+            // Ya no hay a dónde avanzar ni qué pausar
+            BotonSiguiente.Enabled = false;
+            BotonPausa.Enabled = false;
+            BotonPausa.Text = "II Pausar";
+            BotonAnterior.Enabled = true; // permite revisar pasos anteriores
+        }
+
+        private void IniciarEstiramiento(string nombreMostrado, string carpeta, string prefijoArchivo, int totalPasos)
+        {
+            carpetaActual = carpeta;
+            prefijoArchivoActual = prefijoArchivo;
+
+            paso = 1;
+            paso_total = totalPasos;
+            completado = false;
 
             BotonAnterior.Enabled = true;
             BotonSiguiente.Enabled = true;
             BotonPausa.Enabled = true;
+            BotonPausa.Text = "II Pausar";
 
-            LabelEstiramiento.Text = "Estiramiento de Cuello";
+            LabelEstiramiento.Text = nombreMostrado;
             TemporizadorBar.Minimum = 0;
             TemporizadorBar.Maximum = 70; // 7 segundos
             TemporizadorBar.Value = 0;
 
-            timer1.Start();
+            CargarImagenPaso();
+
             timer1.Interval = 100;
+            timer1.Start();
 
             LabelPaso.Text = $"Paso {paso} de {paso_total}";
+        }
+
+        private void botonCuello_Click(object sender, System.EventArgs e)
+        {
+            ActivarBoton(botonCuello);
+            IniciarEstiramiento("Estiramiento de Cuello", "Cuello", "Cuello", totalPasos: 5);
         }
 
         private void BotonMuñeca_Click(object sender, System.EventArgs e)
         {
-            // Configuración inicial para el estiramiento de muñecas
-            paso = 1;
-            paso_total = 5;
-
             ActivarBoton(BotonMuñeca);
-
-
-            BotonAnterior.Enabled = true;
-            BotonSiguiente.Enabled = true;
-            BotonPausa.Enabled = true;
-
-            LabelEstiramiento.Text = "Estiramiento de muñecas";
-            TemporizadorBar.Minimum = 0;
-            TemporizadorBar.Maximum = 70; // 7 segundos
-            TemporizadorBar.Value = 0;
-
-            timer1.Start();
-            timer1.Interval = 100;
-
-            LabelPaso.Text = $"Paso {paso} de {paso_total}";
+            IniciarEstiramiento("Estiramiento de muñecas", "Muneca", "Muneca", totalPasos: 3);
         }
 
         private void BotonEspalda_Click(object sender, System.EventArgs e)
         {
-            // Configuración inicial para el estiramiento de espalda
-            paso = 1;
-            paso_total = 5;
-
             ActivarBoton(BotonEspalda);
-
-            BotonAnterior.Enabled = true;
-            BotonSiguiente.Enabled = true;
-            BotonPausa.Enabled = true;
-
-            LabelEstiramiento.Text = "Estiramiento de Espalda";
-            TemporizadorBar.Minimum = 0;
-            TemporizadorBar.Maximum = 70; // 7 segundos
-            TemporizadorBar.Value = 0;
-
-            timer1.Start();
-            timer1.Interval = 100;
-
-            LabelPaso.Text = $"Paso {paso} de {paso_total}";
+            IniciarEstiramiento("Estiramiento de Espalda", "Espalda", "Espalda", totalPasos: 5);
         }
+
         private void timer1_Tick(object sender, System.EventArgs e)
         {
-
-
             if (TemporizadorBar.Value < TemporizadorBar.Maximum)
             {
                 TemporizadorBar.Value++;
@@ -397,12 +428,14 @@ namespace PausasActivas.Modulos
 
                 if (paso > paso_total)
                 {
-                    timer1.Stop();
+                    paso = paso_total;
+                    MostrarCompletado();
                     return;
                 }
 
                 LabelPaso.Text = $"Paso {paso} de {paso_total}";
                 TemporizadorBar.Value = 0;
+                CargarImagenPaso();
             }
         }
 
@@ -422,24 +455,58 @@ namespace PausasActivas.Modulos
 
         private void BotonSiguiente_Click(object sender, System.EventArgs e)
         {
-            if (paso > 0 && paso < paso_total)
+            if (completado)
+                return;
+
+            if (paso < paso_total)
             {
                 paso++;
                 LabelPaso.Text = $"Paso {paso} de {paso_total}";
                 //reiniciar el temporizador
                 TemporizadorBar.Value = 0;
+                CargarImagenPaso();
             }
-
+            else
+            {
+                // Estaba en el último paso: el usuario decide terminar manualmente
+                MostrarCompletado();
+            }
         }
 
         private void BotonAnterior_Click(object sender, System.EventArgs e)
         {
-            if (paso > 1 && paso <= paso_total)
+            if (completado)
+            {
+                // Salir de la pantalla de completado y volver a mostrar el último paso real
+                completado = false;
+                LabelPaso.Text = $"Paso {paso} de {paso_total}";
+                TemporizadorBar.Value = 0;
+                CargarImagenPaso();
+
+                BotonSiguiente.Enabled = true;
+                BotonPausa.Enabled = true;
+                LabelEstiramiento.Text = ObtenerNombreEstiramientoActual();
+                return;
+            }
+
+            if (paso > 1)
             {
                 paso--;
                 LabelPaso.Text = $"Paso {paso} de {paso_total}";
                 //reiniciar el temporizador
                 TemporizadorBar.Value = 0;
+                CargarImagenPaso();
+            }
+        }
+
+        private string ObtenerNombreEstiramientoActual()
+        {
+            switch (carpetaActual)
+            {
+                case "Cuello": return "Estiramiento de Cuello";
+                case "Espalda": return "Estiramiento de Espalda";
+                case "Muneca": return "Estiramiento de muñecas";
+                default: return LabelEstiramiento.Text;
             }
         }
 
@@ -457,6 +524,7 @@ namespace PausasActivas.Modulos
 
         private void Volver_Click(object sender, System.EventArgs e)
         {
+            timer1.Stop();
             this.Hide();
         }
     }
