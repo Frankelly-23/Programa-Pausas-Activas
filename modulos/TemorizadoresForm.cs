@@ -288,11 +288,11 @@ namespace PausasActivas.Modulos
             PerformLayout();
         }
 
-        //No funciona correctamente 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var mainForm = new MainForm();
             mainForm.Show();
+            this.Close();
 
         }
         private void timer_Tick(object sender, EventArgs e)
