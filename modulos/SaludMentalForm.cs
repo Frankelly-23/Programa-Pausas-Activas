@@ -8,7 +8,7 @@ namespace PausasActivas.Modulos
             this.Size = new System.Drawing.Size(600, 450);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 
-            // TODO Equipo 3: construir la UI aquí
+            // TODO(Frankelly) Equipo 3: construir la UI aquí
         }
     }
 }
