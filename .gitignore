@@ -1,5 +1,5 @@
-bin
-obj
+bin/
+obj/
 .vs/
 [Bb]in/
 [Oo]bj/
@@ -14,3 +14,4 @@ build/
 # NuGet Packages
 *.nupkg
 packages/
+
