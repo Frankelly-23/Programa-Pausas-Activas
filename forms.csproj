@@ -6,10 +6,14 @@
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="modulos\ImagenesOsteo\Cuello 1.png" />
+    <PackageReference Include="Guna.UI2.WinForms" Version="2.0.4.8" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Guna.UI2.WinForms" Version="2.0.4.8" />
+    <!-- Copia las imágenes de los estiramientos (y la de completado) a la carpeta de salida, preservando la estructura de carpetas -->
+    <Content Include="modulos\ImagenesOsteo\**\*.jpg;modulos\ImagenesOsteo\**\*.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>modulos\ImagenesOsteo\%(RecursiveDir)%(Filename)%(Extension)</Link>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">

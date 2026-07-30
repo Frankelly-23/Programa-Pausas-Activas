@@ -1,3 +1,4 @@
+using System;
 using Microsoft.VisualBasic.ApplicationServices;
 using System.Drawing;
 using System.Reflection;
@@ -5,7 +6,6 @@ using System.Windows.Forms;
 using System.IO;
 
 namespace PausasActivas.Modulos
-
 
 {
     public class OsteoForm : System.Windows.Forms.Form
@@ -40,9 +40,7 @@ namespace PausasActivas.Modulos
             this.Text = "Prevención Osteomuscular";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 
-            // TODO(Frankelly) Equipo 2: construir la UI aquí
         }
-
 
         private void InitializeComponent()
         {
@@ -76,9 +74,9 @@ namespace PausasActivas.Modulos
             Volver = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
+            //
             // label1
-            // 
+            //
             label1.AutoSize = true;
             label1.Font = new Font("Lora", 28.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(16, 3, 99);
@@ -87,9 +85,9 @@ namespace PausasActivas.Modulos
             label1.Size = new Size(618, 71);
             label1.TabIndex = 0;
             label1.Text = "Prevencion Osteomuscular";
-            // 
+            //
             // botonCuello
-            // 
+            //
             botonCuello.Animated = true;
             botonCuello.BackColor = Color.Transparent;
             botonCuello.BorderRadius = 20;
@@ -108,9 +106,9 @@ namespace PausasActivas.Modulos
             botonCuello.TabIndex = 2;
             botonCuello.Text = "Cuello";
             botonCuello.Click += botonCuello_Click;
-            // 
+            //
             // BotonMuñeca
-            // 
+            //
             BotonMuñeca.Animated = true;
             BotonMuñeca.BackColor = Color.Transparent;
             BotonMuñeca.BorderRadius = 20;
@@ -129,9 +127,9 @@ namespace PausasActivas.Modulos
             BotonMuñeca.TabIndex = 3;
             BotonMuñeca.Text = "Muñecas";
             BotonMuñeca.Click += BotonMuñeca_Click;
-            // 
+            //
             // BotonEspalda
-            // 
+            //
             BotonEspalda.Animated = true;
             BotonEspalda.BackColor = Color.Transparent;
             BotonEspalda.BorderRadius = 20;
@@ -150,17 +148,17 @@ namespace PausasActivas.Modulos
             BotonEspalda.TabIndex = 4;
             BotonEspalda.Text = "Espalda";
             BotonEspalda.Click += BotonEspalda_Click;
-            // 
+            //
             // pictureBox1
-            // 
+            //
             pictureBox1.Location = new Point(50, 226);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(798, 162);
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
-            // 
+            //
             // LabelEstiramiento
-            // 
+            //
             LabelEstiramiento.AutoSize = true;
             LabelEstiramiento.Font = new Font("Lora", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             LabelEstiramiento.ForeColor = Color.FromArgb(16, 3, 99);
@@ -169,9 +167,9 @@ namespace PausasActivas.Modulos
             LabelEstiramiento.Size = new Size(398, 45);
             LabelEstiramiento.TabIndex = 7;
             LabelEstiramiento.Text = "Seleccione un estiramiento";
-            // 
+            //
             // LabelPaso
-            // 
+            //
             LabelPaso.AutoSize = true;
             LabelPaso.Font = new Font("Lora", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
             LabelPaso.ForeColor = Color.FromArgb(16, 3, 99);
@@ -180,9 +178,9 @@ namespace PausasActivas.Modulos
             LabelPaso.Size = new Size(146, 36);
             LabelPaso.TabIndex = 9;
             LabelPaso.Text = "Paso _ de _";
-            // 
+            //
             // BotonSiguiente
-            // 
+            //
             BotonSiguiente.Animated = true;
             BotonSiguiente.BackColor = Color.Transparent;
             BotonSiguiente.BorderRadius = 20;
@@ -202,9 +200,9 @@ namespace PausasActivas.Modulos
             BotonSiguiente.TabIndex = 12;
             BotonSiguiente.Text = "Siguiente >";
             BotonSiguiente.Click += BotonSiguiente_Click;
-            // 
+            //
             // BotonPausa
-            // 
+            //
             BotonPausa.Animated = true;
             BotonPausa.BackColor = Color.Transparent;
             BotonPausa.BorderRadius = 20;
@@ -224,9 +222,9 @@ namespace PausasActivas.Modulos
             BotonPausa.TabIndex = 11;
             BotonPausa.Text = "II Pausar";
             BotonPausa.Click += BotonPausa_Click;
-            // 
+            //
             // BotonAnterior
-            // 
+            //
             BotonAnterior.Animated = true;
             BotonAnterior.BackColor = Color.Transparent;
             BotonAnterior.BorderRadius = 20;
@@ -246,13 +244,13 @@ namespace PausasActivas.Modulos
             BotonAnterior.TabIndex = 10;
             BotonAnterior.Text = "< Anterior";
             BotonAnterior.Click += BotonAnterior_Click;
-            // 
+            //
             // timer1
-            // 
+            //
             timer1.Tick += timer1_Tick;
-            // 
+            //
             // TemporizadorBar
-            // 
+            //
             TemporizadorBar.BorderRadius = 20;
             TemporizadorBar.CustomizableEdges = customizableEdges27;
             TemporizadorBar.FillColor = Color.FromArgb(190, 198, 211);
@@ -266,9 +264,9 @@ namespace PausasActivas.Modulos
             TemporizadorBar.TabIndex = 13;
             TemporizadorBar.Text = "guna2ProgressBar1";
             TemporizadorBar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            // 
+            //
             // Volver
-            // 
+            //
             Volver.AutoSize = true;
             Volver.Font = new Font("Lora", 28.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Volver.ForeColor = Color.FromArgb(16, 3, 99);
@@ -278,9 +276,9 @@ namespace PausasActivas.Modulos
             Volver.TabIndex = 14;
             Volver.Text = "←";
             Volver.Click += Volver_Click;
-            // 
+            //
             // OsteoForm
-            // 
+            //
             BackColor = Color.FromArgb(243, 248, 253);
             ClientSize = new Size(934, 697);
             Controls.Add(Volver);
@@ -297,96 +295,121 @@ namespace PausasActivas.Modulos
             Controls.Add(label1);
             Name = "OsteoForm";
             Text = "Osteo";
-            Load += OsteoForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
-
-        }
-
-        private void OsteoForm_Load(object sender, System.EventArgs e)
-        {
-
         }
 
 
-        //Manejo de imagenes aquí yts
-        int paso;
-        int paso_total;
-        private void botonCuello_Click(object sender, System.EventArgs e)
+        private int paso;
+        private int paso_total;
 
+        // Carpeta del estiramiento actualmente seleccionado (p.ej. "Cuello", "Cuello")
+        private string carpetaActual;
+
+        private string prefijoArchivoActual;
+        private bool completado;
+
+        // Ruta base donde viven las carpetas de imágenes, relativa al ejecutable
+        private static readonly string RutaBaseImagenes =
+            Path.Combine(AppContext.BaseDirectory, "modulos", "ImagenesOsteo");
+
+        private static readonly string RutaImagenCompletado =
+            Path.Combine(RutaBaseImagenes, "Completado.png");
+
+        private void CargarImagenPaso()
         {
-            // Configuración inicial para el estiramiento de cuello
+            if (string.IsNullOrEmpty(carpetaActual))
+                return;
+
+            string rutaImagen = Path.Combine(RutaBaseImagenes, carpetaActual, $"{prefijoArchivoActual}{paso}.jpg");
+            MostrarImagenDesdeArchivo(rutaImagen);
+        }
+
+        private void MostrarImagenDesdeArchivo(string rutaImagen)
+        {
+            // Se libera la imagen anterior para no dejar el archivo bloqueado
+            var imagenAnterior = pictureBox1.Image;
+            pictureBox1.Image = null;
+            imagenAnterior?.Dispose();
+
+            if (File.Exists(rutaImagen))
+            {
+                using (var stream = new FileStream(rutaImagen, FileMode.Open, FileAccess.Read))
+                {
+                    pictureBox1.Image = Image.FromStream(stream);
+                }
+                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            }
+        }
+
+        private void MostrarCompletado()
+        {
+            timer1.Stop();
+            completado = true;
+
+            LabelEstiramiento.Text = "¡Estiramiento completado!";
+            LabelPaso.Text = $"Paso {paso_total} de {paso_total}";
+            TemporizadorBar.Value = TemporizadorBar.Maximum;
+
+            MostrarImagenDesdeArchivo(RutaImagenCompletado);
+
+            BotonSiguiente.Enabled = false;
+            BotonPausa.Enabled = false;
+            BotonPausa.Text = "II Pausar";
+            BotonAnterior.Enabled = true; // permite revisar pasos anteriores
+
+            BotonPausa_Click(null, null); // Devuelve la barra de progreso a 0 y le quita la pausa si se le da al boton anterior
+                                          // (bug arreglado :b) 
+        }
+
+        private void IniciarEstiramiento(string nombreMostrado, string carpeta, string prefijoArchivo, int totalPasos)
+        {
+            carpetaActual = carpeta;
+            prefijoArchivoActual = prefijoArchivo;
+
             paso = 1;
-            paso_total = 5;
-
-            ActivarBoton(botonCuello);
+            paso_total = totalPasos;
+            completado = false;
 
             BotonAnterior.Enabled = true;
             BotonSiguiente.Enabled = true;
             BotonPausa.Enabled = true;
+            BotonPausa.Text = "II Pausar";
 
-            LabelEstiramiento.Text = "Estiramiento de Cuello";
+            LabelEstiramiento.Text = nombreMostrado;
             TemporizadorBar.Minimum = 0;
             TemporizadorBar.Maximum = 70; // 7 segundos
             TemporizadorBar.Value = 0;
 
-            timer1.Start();
+            CargarImagenPaso();
+
             timer1.Interval = 100;
+            timer1.Start();
 
             LabelPaso.Text = $"Paso {paso} de {paso_total}";
+        }
+
+        private void botonCuello_Click(object sender, System.EventArgs e)
+        {
+            ActivarBoton(botonCuello);
+            IniciarEstiramiento("Estiramiento de Cuello", "Cuello", "Cuello", totalPasos: 5);
         }
 
         private void BotonMuñeca_Click(object sender, System.EventArgs e)
         {
-            // Configuración inicial para el estiramiento de muñecas
-            paso = 1;
-            paso_total = 5;
-
             ActivarBoton(BotonMuñeca);
-
-
-            BotonAnterior.Enabled = true;
-            BotonSiguiente.Enabled = true;
-            BotonPausa.Enabled = true;
-
-            LabelEstiramiento.Text = "Estiramiento de muñecas";
-            TemporizadorBar.Minimum = 0;
-            TemporizadorBar.Maximum = 70; // 7 segundos
-            TemporizadorBar.Value = 0;
-
-            timer1.Start();
-            timer1.Interval = 100;
-
-            LabelPaso.Text = $"Paso {paso} de {paso_total}";
+            IniciarEstiramiento("Estiramiento de muñecas", "Muneca", "Muneca", totalPasos: 3);
         }
 
         private void BotonEspalda_Click(object sender, System.EventArgs e)
         {
-            // Configuración inicial para el estiramiento de espalda
-            paso = 1;
-            paso_total = 5;
-
             ActivarBoton(BotonEspalda);
-
-            BotonAnterior.Enabled = true;
-            BotonSiguiente.Enabled = true;
-            BotonPausa.Enabled = true;
-
-            LabelEstiramiento.Text = "Estiramiento de Espalda";
-            TemporizadorBar.Minimum = 0;
-            TemporizadorBar.Maximum = 70; // 7 segundos
-            TemporizadorBar.Value = 0;
-
-            timer1.Start();
-            timer1.Interval = 100;
-
-            LabelPaso.Text = $"Paso {paso} de {paso_total}";
+            IniciarEstiramiento("Estiramiento de Espalda", "Espalda", "Espalda", totalPasos: 5);
         }
+
         private void timer1_Tick(object sender, System.EventArgs e)
         {
-
-
             if (TemporizadorBar.Value < TemporizadorBar.Maximum)
             {
                 TemporizadorBar.Value++;
@@ -397,12 +420,14 @@ namespace PausasActivas.Modulos
 
                 if (paso > paso_total)
                 {
-                    timer1.Stop();
+                    paso = paso_total;
+                    MostrarCompletado();
                     return;
                 }
 
                 LabelPaso.Text = $"Paso {paso} de {paso_total}";
                 TemporizadorBar.Value = 0;
+                CargarImagenPaso();
             }
         }
 
@@ -422,24 +447,57 @@ namespace PausasActivas.Modulos
 
         private void BotonSiguiente_Click(object sender, System.EventArgs e)
         {
-            if (paso > 0 && paso < paso_total)
+            if (completado)
+                return;
+
+            if (paso < paso_total)
             {
                 paso++;
                 LabelPaso.Text = $"Paso {paso} de {paso_total}";
                 //reiniciar el temporizador
                 TemporizadorBar.Value = 0;
+                CargarImagenPaso();
             }
-
+            else
+            {
+                MostrarCompletado();
+            }
         }
 
         private void BotonAnterior_Click(object sender, System.EventArgs e)
         {
-            if (paso > 1 && paso <= paso_total)
+            if (completado)
+            {
+                // Salir de la pantalla de completado y volver a mostrar el último paso real
+                completado = false;
+                LabelPaso.Text = $"Paso {paso} de {paso_total}";
+                TemporizadorBar.Value = 0;
+                CargarImagenPaso();
+
+                BotonSiguiente.Enabled = true;
+                BotonPausa.Enabled = true;
+                LabelEstiramiento.Text = ObtenerNombreEstiramientoActual();
+                return;
+            }
+
+            if (paso > 1)
             {
                 paso--;
                 LabelPaso.Text = $"Paso {paso} de {paso_total}";
                 //reiniciar el temporizador
                 TemporizadorBar.Value = 0;
+                CargarImagenPaso();
+            }
+        }
+
+        private string ObtenerNombreEstiramientoActual()
+        {
+            switch (carpetaActual)
+            {
+                case "Cuello": return "Estiramiento de Cuello";
+                case "Espalda": return "Estiramiento de Espalda";
+                case "Muneca": return "Estiramiento de muñecas";
+                default: return LabelEstiramiento.Text;
             }
         }
 
@@ -449,6 +507,9 @@ namespace PausasActivas.Modulos
             botonCuello.FillColor = Color.FromArgb(109, 158, 226);
             BotonMuñeca.FillColor = Color.FromArgb(109, 158, 226);
             BotonEspalda.FillColor = Color.FromArgb(109, 158, 226);
+            botonCuello.ForeColor = Color.Black;
+            BotonMuñeca.ForeColor = Color.Black;
+            BotonEspalda.ForeColor = Color.Black;
 
             // Color del botón seleccionado
             botonActivo.FillColor = Color.FromArgb(16, 3, 99);
@@ -457,7 +518,8 @@ namespace PausasActivas.Modulos
 
         private void Volver_Click(object sender, System.EventArgs e)
         {
-            this.Hide();
+            timer1.Stop();
+            this.Close();
         }
     }
 }
