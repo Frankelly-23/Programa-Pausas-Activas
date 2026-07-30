@@ -23,7 +23,6 @@ namespace PausasActivas.Modulos
         private MenuStrip menuStrip1;
         private Timer timer;
         private System.ComponentModel.IContainer components;
-        private Label label8;
         private ToolStripMenuItem salirToolStripMenuItem;
 
         // Timer dedicado para la Regla 20/20/20
@@ -44,7 +43,7 @@ namespace PausasActivas.Modulos
             timerMicropausa = new System.Windows.Forms.Timer();
             timerMicropausa.Interval = 1000;
             timerMicropausa.Tick += timerMicropausa_Tick;
-            timerMicropausa.Start();
+            // Ya no se inicia aquí: ahora arranca junto con el cronómetro principal (BInicioPausa_Click)
 
             // Configuración del reto de movimiento
             guna2ProgressBar2.Minimum = 0;
@@ -54,7 +53,7 @@ namespace PausasActivas.Modulos
             timerReto = new System.Windows.Forms.Timer();
             timerReto.Interval = 1000;
             timerReto.Tick += timerReto_Tick;
-            timerReto.Start();
+            // Ya no se inicia aquí: ahora arranca junto con el cronómetro principal (BInicioPausa_Click)
         }
 
         //Variables a utilizar
@@ -102,7 +101,6 @@ namespace PausasActivas.Modulos
             menuStrip1 = new MenuStrip();
             salirToolStripMenuItem = new ToolStripMenuItem();
             timer = new Timer(components);
-            label8 = new Label();
             PBPomodoro.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -114,7 +112,7 @@ namespace PausasActivas.Modulos
             label1.ForeColor = System.Drawing.Color.FromArgb(16, 3, 99);
             label1.Location = new System.Drawing.Point(39, 51);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(405, 51);
+            label1.Size = new System.Drawing.Size(332, 43);
             label1.TabIndex = 1;
             label1.Text = "Temporizadores";
             // 
@@ -144,7 +142,7 @@ namespace PausasActivas.Modulos
             label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label2.Location = new System.Drawing.Point(67, 134);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(120, 32);
+            label2.Size = new System.Drawing.Size(101, 28);
             label2.TabIndex = 1;
             label2.Text = "ENFOQUE";
             // 
@@ -155,7 +153,7 @@ namespace PausasActivas.Modulos
             labelTiempo.Font = new System.Drawing.Font("Segoe UI", 33F);
             labelTiempo.Location = new System.Drawing.Point(46, 60);
             labelTiempo.Name = "labelTiempo";
-            labelTiempo.Size = new System.Drawing.Size(195, 88);
+            labelTiempo.Size = new System.Drawing.Size(164, 74);
             labelTiempo.TabIndex = 0;
             labelTiempo.Text = "60:00";
             // 
@@ -205,8 +203,8 @@ namespace PausasActivas.Modulos
             guna2ProgressBar1.CustomizableEdges = customizableEdges6;
             guna2ProgressBar1.Location = new System.Drawing.Point(39, 523);
             guna2ProgressBar1.Name = "guna2ProgressBar1";
-            guna2ProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(128, 128, 255);
-            guna2ProgressBar1.ProgressColor2 = System.Drawing.Color.FromArgb(128, 128, 255);
+            guna2ProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(109, 158, 226);
+            guna2ProgressBar1.ProgressColor2 = System.Drawing.Color.FromArgb(109, 158, 226);
             guna2ProgressBar1.ShadowDecoration.CustomizableEdges = customizableEdges7;
             guna2ProgressBar1.Size = new System.Drawing.Size(638, 25);
             guna2ProgressBar1.TabIndex = 5;
@@ -220,7 +218,7 @@ namespace PausasActivas.Modulos
             label3.ForeColor = System.Drawing.Color.FromArgb(16, 3, 99);
             label3.Location = new System.Drawing.Point(39, 493);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(279, 32);
+            label3.Size = new System.Drawing.Size(231, 27);
             label3.TabIndex = 6;
             label3.Text = "👁️ Regla 20 / 20 /20";
             // 
@@ -228,9 +226,9 @@ namespace PausasActivas.Modulos
             // 
             label4.AutoSize = true;
             label4.ForeColor = System.Drawing.Color.FromArgb(16, 3, 99);
-            label4.Location = new System.Drawing.Point(29, 551);
+            label4.Location = new System.Drawing.Point(29, 562);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(305, 32);
+            label4.Size = new System.Drawing.Size(250, 27);
             label4.TabIndex = 8;
             label4.Text = "👣 Reto de movimiento";
             // 
@@ -255,11 +253,11 @@ namespace PausasActivas.Modulos
             labelMicropausa.BackColor = System.Drawing.Color.Transparent;
             labelMicropausa.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             labelMicropausa.ForeColor = System.Drawing.Color.FromArgb(91, 104, 140);
-            labelMicropausa.Location = new System.Drawing.Point(440, 493);
+            labelMicropausa.Location = new System.Drawing.Point(476, 498);
             labelMicropausa.Name = "labelMicropausa";
-            labelMicropausa.Size = new System.Drawing.Size(298, 25);
+            labelMicropausa.Size = new System.Drawing.Size(237, 20);
             labelMicropausa.TabIndex = 9;
-            labelMicropausa.Text = "Próxima micropausa en 00:00";
+            labelMicropausa.Text = "Próxima micropausa en 20:00";
             labelMicropausa.Click += labelMicropausa_Click;
             // 
             // labelRetoDeMovimiento
@@ -268,11 +266,11 @@ namespace PausasActivas.Modulos
             labelRetoDeMovimiento.BackColor = System.Drawing.Color.Transparent;
             labelRetoDeMovimiento.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             labelRetoDeMovimiento.ForeColor = System.Drawing.Color.FromArgb(91, 104, 140);
-            labelRetoDeMovimiento.Location = new System.Drawing.Point(499, 558);
+            labelRetoDeMovimiento.Location = new System.Drawing.Point(525, 567);
             labelRetoDeMovimiento.Name = "labelRetoDeMovimiento";
-            labelRetoDeMovimiento.Size = new System.Drawing.Size(225, 25);
+            labelRetoDeMovimiento.Size = new System.Drawing.Size(177, 20);
             labelRetoDeMovimiento.TabIndex = 10;
-            labelRetoDeMovimiento.Text = "Próximo reto en 00:00";
+            labelRetoDeMovimiento.Text = "Próximo reto en 30:00";
             labelRetoDeMovimiento.Click += labelRetoDeMovimiento_Click;
             // 
             // label7
@@ -284,7 +282,7 @@ namespace PausasActivas.Modulos
             label7.Name = "label7";
             label7.Size = new System.Drawing.Size(376, 48);
             label7.TabIndex = 11;
-            label7.Text = "🔔 Recibiras una notificación suave cada 2 minutos antes de cada cambio de fase.";
+            label7.Text = "🔔 Recibiras una notificación suave 2 minutos antes de cada cambio de fase.";
             // 
             // menuStrip1
             // 
@@ -293,7 +291,7 @@ namespace PausasActivas.Modulos
             menuStrip1.Items.AddRange(new ToolStripItem[] { salirToolStripMenuItem });
             menuStrip1.Location = new System.Drawing.Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new System.Drawing.Size(725, 35);
+            menuStrip1.Size = new System.Drawing.Size(725, 29);
             menuStrip1.TabIndex = 12;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -302,7 +300,7 @@ namespace PausasActivas.Modulos
             salirToolStripMenuItem.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, 0);
             salirToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            salirToolStripMenuItem.Size = new System.Drawing.Size(76, 31);
+            salirToolStripMenuItem.Size = new System.Drawing.Size(62, 25);
             salirToolStripMenuItem.Text = "Salir";
             salirToolStripMenuItem.Click += salirToolStripMenuItem_Click;
             // 
@@ -311,22 +309,10 @@ namespace PausasActivas.Modulos
             timer.Interval = 1000;
             timer.Tick += timer_Tick;
             // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new System.Drawing.Font("Georgia", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label8.ForeColor = System.Drawing.Color.FromArgb(16, 3, 99);
-            label8.Location = new System.Drawing.Point(368, 51);
-            label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(58, 43);
-            label8.TabIndex = 13;
-            label8.Text = "⏲️";
-            // 
             // TemorizadoresForm
             // 
             BackColor = System.Drawing.Color.FromArgb(243, 248, 253);
             ClientSize = new System.Drawing.Size(725, 669);
-            Controls.Add(label8);
             Controls.Add(label1);
             Controls.Add(label7);
             Controls.Add(labelRetoDeMovimiento);
@@ -343,6 +329,7 @@ namespace PausasActivas.Modulos
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MainMenuStrip = menuStrip1;
             Name = "TemorizadoresForm";
+            Text = "Temporizadores y Alarmas";
             PBPomodoro.ResumeLayout(false);
             PBPomodoro.PerformLayout();
             menuStrip1.ResumeLayout(false);
@@ -387,23 +374,47 @@ namespace PausasActivas.Modulos
             if (BInicioPausa.Text == "⏩ Iniciar" || BInicioPausa.Text == "⏩ Reanudar")
             {
                 BInicioPausa.Text = "⏸️ Pausar";
+
+                // Al iniciar/reanudar el cronómetro principal, también arrancan
+                // la regla 20/20/20 y el reto de movimiento.
                 timer.Start();
+                timerMicropausa.Start();
+                timerReto.Start();
             }
             else
             {
                 BInicioPausa.Text = "⏩ Reanudar";
+
+                // Al pausar el cronómetro principal, también se pausan
+                // la regla 20/20/20 y el reto de movimiento.
                 timer.Stop();
+                timerMicropausa.Stop();
+                timerReto.Stop();
             }
         }
 
         //Metodo para resetear los controles
         private void Reset()
         {
-            timer.Dispose();
+            // Se detienen los tres timers en vez de Dispose(), para poder
+            // volver a iniciarlos con el botón "Iniciar" sin errores.
+            timer.Stop();
+            timerMicropausa.Stop();
+            timerReto.Stop();
+
+            // Reinicio del cronómetro principal
             labelTiempo.Text = "60:00";
             PBPomodoro.Value = 0;
             BInicioPausa.Text = "⏩ Iniciar";
             tiempoRestante = 3600;
+
+            // Reinicio de la regla 20/20/20
+            tiempoMicropausa = 1200;
+            guna2ProgressBar1.Value = 0;
+
+            // Reinicio del reto de movimiento
+            tiempoReto = 1800;
+            guna2ProgressBar2.Value = 0;
         }
 
         private void guna2ProgressBar1_ValueChanged(object sender, EventArgs e)
