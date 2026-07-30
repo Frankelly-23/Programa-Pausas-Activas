@@ -1,3 +1,17 @@
 bin/
 obj/
 .vs/
+[Bb]in/
+[Oo]bj/
+build/
+
+# Visual Studio user-specific files
+.vs/
+*.user
+*.userosv
+*.suo
+
+# NuGet Packages
+*.nupkg
+packages/
+

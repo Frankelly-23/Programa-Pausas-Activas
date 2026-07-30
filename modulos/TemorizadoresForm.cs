@@ -18,7 +18,7 @@ namespace PausasActivas.Modulos
         private Label label4;
         private Guna.UI2.WinForms.Guna2ProgressBar guna2ProgressBar2;
         private Label labelMicropausa;
-        private Label label6;
+        private Label labelRetoDeMovimiento;
         private Label label7;
         private MenuStrip menuStrip1;
         private Timer timer;
@@ -26,25 +26,66 @@ namespace PausasActivas.Modulos
         private Label label8;
         private ToolStripMenuItem salirToolStripMenuItem;
 
+        // Timer dedicado para la Regla 20/20/20
+        private System.Windows.Forms.Timer timerMicropausa;
+
+        // Timer dedicado para el Reto de movimiento
+        private System.Windows.Forms.Timer timerReto;
+
         public TemorizadoresForm()
         {
             InitializeComponent();
+
+            // Configuración de la regla 20/20/20
+            guna2ProgressBar1.Minimum = 0;
+            guna2ProgressBar1.Maximum = tiempoMicropausa;
+            guna2ProgressBar1.Value = 0;
+
+            timerMicropausa = new System.Windows.Forms.Timer();
+            timerMicropausa.Interval = 1000;
+            timerMicropausa.Tick += timerMicropausa_Tick;
+            timerMicropausa.Start();
+
+            // Configuración del reto de movimiento
+            guna2ProgressBar2.Minimum = 0;
+            guna2ProgressBar2.Maximum = tiempoReto;
+            guna2ProgressBar2.Value = 0;
+
+            timerReto = new System.Windows.Forms.Timer();
+            timerReto.Interval = 1000;
+            timerReto.Tick += timerReto_Tick;
+            timerReto.Start();
         }
 
         //Variables a utilizar
         int tiempoRestante = 3600; //los 60 minutos en segundos
+        int tiempoMicropausa = 1200; //20 minutos en segundos para la regla 20/20/20
+        int tiempoReto = 1800; //30 minutos en segundos para el reto de movimiento
+
+        // Lista de retos de movimiento para variar la sugerencia
+        private readonly string[] retosMovimiento = new string[]
+        {
+            "🚶 Camina 5 minutos por tu espacio.",
+            "🏃 Trota en el mismo lugar durante 1 minuto.",
+            "🪜 Sube y baja escaleras un par de veces.",
+            "🤸 Haz 15 sentadillas.",
+            "🧍 Ponte de pie y estira brazos y piernas.",
+            "🕺 Baila tu canción favorita durante 2 minutos."
+        };
+        private Random randomReto = new Random();
+
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             PBPomodoro = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             label2 = new Label();
@@ -56,7 +97,7 @@ namespace PausasActivas.Modulos
             label4 = new Label();
             guna2ProgressBar2 = new Guna.UI2.WinForms.Guna2ProgressBar();
             labelMicropausa = new Label();
-            label6 = new Label();
+            labelRetoDeMovimiento = new Label();
             label7 = new Label();
             menuStrip1 = new MenuStrip();
             salirToolStripMenuItem = new ToolStripMenuItem();
@@ -90,7 +131,7 @@ namespace PausasActivas.Modulos
             PBPomodoro.Name = "PBPomodoro";
             PBPomodoro.ProgressColor = System.Drawing.Color.FromArgb(109, 158, 226);
             PBPomodoro.ProgressColor2 = System.Drawing.Color.FromArgb(109, 158, 226);
-            PBPomodoro.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            PBPomodoro.ShadowDecoration.CustomizableEdges = customizableEdges1;
             PBPomodoro.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             PBPomodoro.Size = new System.Drawing.Size(224, 224);
             PBPomodoro.TabIndex = 2;
@@ -121,7 +162,7 @@ namespace PausasActivas.Modulos
             // BInicioPausa
             // 
             BInicioPausa.BorderRadius = 20;
-            BInicioPausa.CustomizableEdges = customizableEdges11;
+            BInicioPausa.CustomizableEdges = customizableEdges2;
             BInicioPausa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             BInicioPausa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             BInicioPausa.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -132,7 +173,7 @@ namespace PausasActivas.Modulos
             BInicioPausa.ForeColor = System.Drawing.Color.White;
             BInicioPausa.Location = new System.Drawing.Point(440, 217);
             BInicioPausa.Name = "BInicioPausa";
-            BInicioPausa.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            BInicioPausa.ShadowDecoration.CustomizableEdges = customizableEdges3;
             BInicioPausa.Size = new System.Drawing.Size(166, 66);
             BInicioPausa.TabIndex = 3;
             BInicioPausa.Text = "⏩ Iniciar";
@@ -141,7 +182,7 @@ namespace PausasActivas.Modulos
             // BReiniciar
             // 
             BReiniciar.BorderRadius = 20;
-            BReiniciar.CustomizableEdges = customizableEdges13;
+            BReiniciar.CustomizableEdges = customizableEdges4;
             BReiniciar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             BReiniciar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             BReiniciar.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -152,7 +193,7 @@ namespace PausasActivas.Modulos
             BReiniciar.ForeColor = System.Drawing.Color.White;
             BReiniciar.Location = new System.Drawing.Point(440, 304);
             BReiniciar.Name = "BReiniciar";
-            BReiniciar.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            BReiniciar.ShadowDecoration.CustomizableEdges = customizableEdges5;
             BReiniciar.Size = new System.Drawing.Size(166, 66);
             BReiniciar.TabIndex = 4;
             BReiniciar.Text = "🔄 Reiniciar";
@@ -161,10 +202,12 @@ namespace PausasActivas.Modulos
             // guna2ProgressBar1
             // 
             guna2ProgressBar1.BackColor = System.Drawing.Color.FromArgb(91, 104, 140);
-            guna2ProgressBar1.CustomizableEdges = customizableEdges15;
+            guna2ProgressBar1.CustomizableEdges = customizableEdges6;
             guna2ProgressBar1.Location = new System.Drawing.Point(39, 523);
             guna2ProgressBar1.Name = "guna2ProgressBar1";
-            guna2ProgressBar1.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            guna2ProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(128, 128, 255);
+            guna2ProgressBar1.ProgressColor2 = System.Drawing.Color.FromArgb(128, 128, 255);
+            guna2ProgressBar1.ShadowDecoration.CustomizableEdges = customizableEdges7;
             guna2ProgressBar1.Size = new System.Drawing.Size(638, 25);
             guna2ProgressBar1.TabIndex = 5;
             guna2ProgressBar1.Text = "guna2ProgressBar1";
@@ -194,14 +237,17 @@ namespace PausasActivas.Modulos
             // guna2ProgressBar2
             // 
             guna2ProgressBar2.BackColor = System.Drawing.Color.FromArgb(91, 104, 140);
-            guna2ProgressBar2.CustomizableEdges = customizableEdges17;
+            guna2ProgressBar2.CustomizableEdges = customizableEdges8;
             guna2ProgressBar2.Location = new System.Drawing.Point(39, 592);
             guna2ProgressBar2.Name = "guna2ProgressBar2";
-            guna2ProgressBar2.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            guna2ProgressBar2.ProgressColor = System.Drawing.Color.FromArgb(128, 128, 255);
+            guna2ProgressBar2.ProgressColor2 = System.Drawing.Color.FromArgb(128, 128, 255);
+            guna2ProgressBar2.ShadowDecoration.CustomizableEdges = customizableEdges9;
             guna2ProgressBar2.Size = new System.Drawing.Size(638, 20);
             guna2ProgressBar2.TabIndex = 7;
             guna2ProgressBar2.Text = "guna2ProgressBar2";
             guna2ProgressBar2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            guna2ProgressBar2.ValueChanged += guna2ProgressBar2_ValueChanged;
             // 
             // labelMicropausa
             // 
@@ -216,17 +262,18 @@ namespace PausasActivas.Modulos
             labelMicropausa.Text = "Próxima micropausa en 00:00";
             labelMicropausa.Click += labelMicropausa_Click;
             // 
-            // label6
+            // labelRetoDeMovimiento
             // 
-            label6.AutoSize = true;
-            label6.BackColor = System.Drawing.Color.Transparent;
-            label6.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label6.ForeColor = System.Drawing.Color.FromArgb(91, 104, 140);
-            label6.Location = new System.Drawing.Point(499, 558);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(225, 25);
-            label6.TabIndex = 10;
-            label6.Text = "Próximo reto en 00:00";
+            labelRetoDeMovimiento.AutoSize = true;
+            labelRetoDeMovimiento.BackColor = System.Drawing.Color.Transparent;
+            labelRetoDeMovimiento.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            labelRetoDeMovimiento.ForeColor = System.Drawing.Color.FromArgb(91, 104, 140);
+            labelRetoDeMovimiento.Location = new System.Drawing.Point(499, 558);
+            labelRetoDeMovimiento.Name = "labelRetoDeMovimiento";
+            labelRetoDeMovimiento.Size = new System.Drawing.Size(225, 25);
+            labelRetoDeMovimiento.TabIndex = 10;
+            labelRetoDeMovimiento.Text = "Próximo reto en 00:00";
+            labelRetoDeMovimiento.Click += labelRetoDeMovimiento_Click;
             // 
             // label7
             // 
@@ -282,7 +329,7 @@ namespace PausasActivas.Modulos
             Controls.Add(label8);
             Controls.Add(label1);
             Controls.Add(label7);
-            Controls.Add(label6);
+            Controls.Add(labelRetoDeMovimiento);
             Controls.Add(BInicioPausa);
             Controls.Add(label4);
             Controls.Add(PBPomodoro);
@@ -361,12 +408,66 @@ namespace PausasActivas.Modulos
 
         private void guna2ProgressBar1_ValueChanged(object sender, EventArgs e)
         {
-
+            int minutos = tiempoMicropausa / 60;
+            int segundos = tiempoMicropausa % 60;
+            labelMicropausa.Text = $"Próxima micropausa en {minutos:00}:{segundos:00}";
         }
 
         private void labelMicropausa_Click(object sender, EventArgs e)
         {
+            tiempoMicropausa = 1200;
+            guna2ProgressBar1.Value = 0;
+        }
 
+        // Tick del timer para la Regla 20/20/20
+        private void timerMicropausa_Tick(object sender, EventArgs e)
+        {
+            if (tiempoMicropausa <= 0)
+            {
+                tiempoMicropausa = 1200; // reinicia a 20 minutos
+                guna2ProgressBar1.Value = 0;
+                SystemSounds.Beep.Play();
+                MessageBox.Show(
+                    "👁️ Mira algo a unos 20 pies (6 metros) de distancia durante 20 segundos.",
+                    "🔔 Regla 20/20/20");
+            }
+            else
+            {
+                tiempoMicropausa--;
+                guna2ProgressBar1.Value += 1;
+            }
+        }
+
+        private void labelRetoDeMovimiento_Click(object sender, EventArgs e)
+        {
+            tiempoReto = 1800;
+            guna2ProgressBar2.Value = 0;
+        }
+
+        private void guna2ProgressBar2_ValueChanged(object sender, EventArgs e)
+        {
+            int minutos = tiempoReto / 60;
+            int segundos = tiempoReto % 60;
+            labelRetoDeMovimiento.Text = $"Próximo reto en {minutos:00}:{segundos:00}";
+        }
+
+        // Tick del timer para el Reto de movimiento
+        private void timerReto_Tick(object sender, EventArgs e)
+        {
+            if (tiempoReto <= 0)
+            {
+                tiempoReto = 1800; // reinicia a 30 minutos
+                guna2ProgressBar2.Value = 0;
+                SystemSounds.Beep.Play();
+
+                string reto = retosMovimiento[randomReto.Next(retosMovimiento.Length)];
+                MessageBox.Show(reto, "🏃 Reto de movimiento");
+            }
+            else
+            {
+                tiempoReto--;
+                guna2ProgressBar2.Value += 1;
+            }
         }
     }
 }
