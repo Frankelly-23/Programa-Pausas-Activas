@@ -23,6 +23,7 @@ namespace PausasActivas.Modulos
         private MenuStrip menuStrip1;
         private Timer timer;
         private System.ComponentModel.IContainer components;
+        private Label label8;
         private ToolStripMenuItem salirToolStripMenuItem;
 
         public TemorizadoresForm()
@@ -60,6 +61,7 @@ namespace PausasActivas.Modulos
             menuStrip1 = new MenuStrip();
             salirToolStripMenuItem = new ToolStripMenuItem();
             timer = new Timer(components);
+            label8 = new Label();
             PBPomodoro.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -260,10 +262,22 @@ namespace PausasActivas.Modulos
             timer.Interval = 1000;
             timer.Tick += timer_Tick;
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new System.Drawing.Font("Georgia", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label8.ForeColor = System.Drawing.Color.FromArgb(16, 3, 99);
+            label8.Location = new System.Drawing.Point(368, 51);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(58, 43);
+            label8.TabIndex = 13;
+            label8.Text = "⏲️";
+            // 
             // TemorizadoresForm
             // 
             BackColor = System.Drawing.Color.FromArgb(243, 248, 253);
             ClientSize = new System.Drawing.Size(725, 669);
+            Controls.Add(label8);
             Controls.Add(label1);
             Controls.Add(label7);
             Controls.Add(label6);

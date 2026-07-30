@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\modulos\\temorizadoresform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|solutionrelative:modulos\\temorizadoresform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|c:\\users\\adeli\\documents\\college\\6th semester\\ergonomia\\programa-pausas-activas\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|c:\\users\\adeli\\documents\\college\\6th semester\\ergonomia\\programa-pausas-activas\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\modulos\\temorizadoresform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|solutionrelative:modulos\\temorizadoresform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,33 +26,44 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": ".gitignore",
-              "DocumentMoniker": "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\.gitignore",
-              "RelativeDocumentMoniker": ".gitignore",
-              "ToolTip": "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\.gitignore*",
-              "RelativeToolTip": ".gitignore*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-07-29T02:42:13.886Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-07-29T02:42:13.886Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "MainForm.cs",
               "DocumentMoniker": "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\MainForm.cs",
               "RelativeDocumentMoniker": "MainForm.cs",
-              "ToolTip": "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\MainForm.cs*",
-              "RelativeToolTip": "MainForm.cs*",
+              "ToolTip": "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\MainForm.cs",
+              "RelativeToolTip": "MainForm.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAQwBIAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-29T02:36:29.034Z",
@@ -60,25 +71,25 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "TemorizadoresForm.cs",
               "DocumentMoniker": "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\modulos\\TemorizadoresForm.cs",
               "RelativeDocumentMoniker": "modulos\\TemorizadoresForm.cs",
-              "ToolTip": "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\modulos\\TemorizadoresForm.cs*",
-              "RelativeToolTip": "modulos\\TemorizadoresForm.cs*",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAQwCYBAAAZAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\modulos\\TemorizadoresForm.cs",
+              "RelativeToolTip": "modulos\\TemorizadoresForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQBAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-29T01:01:57.969Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "TemorizadoresForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\modulos\\TemorizadoresForm.cs",
               "RelativeDocumentMoniker": "modulos\\TemorizadoresForm.cs",
-              "ToolTip": "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\modulos\\TemorizadoresForm.cs [Design]*",
-              "RelativeToolTip": "modulos\\TemorizadoresForm.cs [Design]*",
+              "ToolTip": "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\modulos\\TemorizadoresForm.cs [Design]",
+              "RelativeToolTip": "modulos\\TemorizadoresForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-29T00:51:23.084Z",
               "EditorCaption": " [Design]"
