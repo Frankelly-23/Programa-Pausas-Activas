@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\forms.csproj": {}
+    "C:\\Users\\lusia\\Downloads\\proyecto\\forms.csproj": {}
   },
   "projects": {
-    "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\forms.csproj": {
+    "C:\\Users\\lusia\\Downloads\\proyecto\\forms.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\forms.csproj",
+        "projectUniqueName": "C:\\Users\\lusia\\Downloads\\proyecto\\forms.csproj",
         "projectName": "forms",
-        "projectPath": "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\forms.csproj",
-        "packagesPath": "C:\\Users\\adeli\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\adeli\\Documents\\College\\6th semester\\Ergonomia\\Programa-Pausas-Activas\\obj\\",
+        "projectPath": "C:\\Users\\lusia\\Downloads\\proyecto\\forms.csproj",
+        "packagesPath": "C:\\Users\\lusia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lusia\\Downloads\\proyecto\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\adeli\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lusia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -72,7 +72,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.302/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
