@@ -43,7 +43,7 @@ namespace PausasActivas.Modulos
             timerMicropausa = new System.Windows.Forms.Timer();
             timerMicropausa.Interval = 1000;
             timerMicropausa.Tick += timerMicropausa_Tick;
-            timerMicropausa.Start();
+            // Ya no se inicia aquí: ahora arranca junto con el cronómetro principal (BInicioPausa_Click)
 
             // Configuración del reto de movimiento
             guna2ProgressBar2.Minimum = 0;
@@ -53,7 +53,7 @@ namespace PausasActivas.Modulos
             timerReto = new System.Windows.Forms.Timer();
             timerReto.Interval = 1000;
             timerReto.Tick += timerReto_Tick;
-            timerReto.Start();
+            // Ya no se inicia aquí: ahora arranca junto con el cronómetro principal (BInicioPausa_Click)
         }
 
         //Variables a utilizar
@@ -373,23 +373,47 @@ namespace PausasActivas.Modulos
             if (BInicioPausa.Text == "⏩ Iniciar" || BInicioPausa.Text == "⏩ Reanudar")
             {
                 BInicioPausa.Text = "⏸️ Pausar";
+
+                // Al iniciar/reanudar el cronómetro principal, también arrancan
+                // la regla 20/20/20 y el reto de movimiento.
                 timer.Start();
+                timerMicropausa.Start();
+                timerReto.Start();
             }
             else
             {
                 BInicioPausa.Text = "⏩ Reanudar";
+
+                // Al pausar el cronómetro principal, también se pausan
+                // la regla 20/20/20 y el reto de movimiento.
                 timer.Stop();
+                timerMicropausa.Stop();
+                timerReto.Stop();
             }
         }
 
         //Metodo para resetear los controles
         private void Reset()
         {
-            timer.Dispose();
+            // Se detienen los tres timers en vez de Dispose(), para poder
+            // volver a iniciarlos con el botón "Iniciar" sin errores.
+            timer.Stop();
+            timerMicropausa.Stop();
+            timerReto.Stop();
+
+            // Reinicio del cronómetro principal
             labelTiempo.Text = "60:00";
             PBPomodoro.Value = 0;
             BInicioPausa.Text = "⏩ Iniciar";
             tiempoRestante = 3600;
+
+            // Reinicio de la regla 20/20/20
+            tiempoMicropausa = 1200;
+            guna2ProgressBar1.Value = 0;
+
+            // Reinicio del reto de movimiento
+            tiempoReto = 1800;
+            guna2ProgressBar2.Value = 0;
         }
 
         private void guna2ProgressBar1_ValueChanged(object sender, EventArgs e)
