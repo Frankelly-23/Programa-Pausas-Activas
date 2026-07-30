@@ -17,7 +17,7 @@ namespace PausasActivas.Modulos
         private Label label3;
         private Label label4;
         private Guna.UI2.WinForms.Guna2ProgressBar guna2ProgressBar2;
-        private Label label5;
+        private Label labelMicropausa;
         private Label label6;
         private Label label7;
         private MenuStrip menuStrip1;
@@ -36,15 +36,15 @@ namespace PausasActivas.Modulos
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             PBPomodoro = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             label2 = new Label();
@@ -55,7 +55,7 @@ namespace PausasActivas.Modulos
             label3 = new Label();
             label4 = new Label();
             guna2ProgressBar2 = new Guna.UI2.WinForms.Guna2ProgressBar();
-            label5 = new Label();
+            labelMicropausa = new Label();
             label6 = new Label();
             label7 = new Label();
             menuStrip1 = new MenuStrip();
@@ -73,7 +73,7 @@ namespace PausasActivas.Modulos
             label1.ForeColor = System.Drawing.Color.FromArgb(16, 3, 99);
             label1.Location = new System.Drawing.Point(39, 51);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(332, 43);
+            label1.Size = new System.Drawing.Size(405, 51);
             label1.TabIndex = 1;
             label1.Text = "Temporizadores";
             // 
@@ -90,7 +90,7 @@ namespace PausasActivas.Modulos
             PBPomodoro.Name = "PBPomodoro";
             PBPomodoro.ProgressColor = System.Drawing.Color.FromArgb(109, 158, 226);
             PBPomodoro.ProgressColor2 = System.Drawing.Color.FromArgb(109, 158, 226);
-            PBPomodoro.ShadowDecoration.CustomizableEdges = customizableEdges1;
+            PBPomodoro.ShadowDecoration.CustomizableEdges = customizableEdges10;
             PBPomodoro.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             PBPomodoro.Size = new System.Drawing.Size(224, 224);
             PBPomodoro.TabIndex = 2;
@@ -103,7 +103,7 @@ namespace PausasActivas.Modulos
             label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label2.Location = new System.Drawing.Point(67, 134);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(101, 28);
+            label2.Size = new System.Drawing.Size(120, 32);
             label2.TabIndex = 1;
             label2.Text = "ENFOQUE";
             // 
@@ -114,14 +114,14 @@ namespace PausasActivas.Modulos
             labelTiempo.Font = new System.Drawing.Font("Segoe UI", 33F);
             labelTiempo.Location = new System.Drawing.Point(46, 60);
             labelTiempo.Name = "labelTiempo";
-            labelTiempo.Size = new System.Drawing.Size(164, 74);
+            labelTiempo.Size = new System.Drawing.Size(195, 88);
             labelTiempo.TabIndex = 0;
             labelTiempo.Text = "60:00";
             // 
             // BInicioPausa
             // 
             BInicioPausa.BorderRadius = 20;
-            BInicioPausa.CustomizableEdges = customizableEdges2;
+            BInicioPausa.CustomizableEdges = customizableEdges11;
             BInicioPausa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             BInicioPausa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             BInicioPausa.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -132,7 +132,7 @@ namespace PausasActivas.Modulos
             BInicioPausa.ForeColor = System.Drawing.Color.White;
             BInicioPausa.Location = new System.Drawing.Point(440, 217);
             BInicioPausa.Name = "BInicioPausa";
-            BInicioPausa.ShadowDecoration.CustomizableEdges = customizableEdges3;
+            BInicioPausa.ShadowDecoration.CustomizableEdges = customizableEdges12;
             BInicioPausa.Size = new System.Drawing.Size(166, 66);
             BInicioPausa.TabIndex = 3;
             BInicioPausa.Text = "⏩ Iniciar";
@@ -141,7 +141,7 @@ namespace PausasActivas.Modulos
             // BReiniciar
             // 
             BReiniciar.BorderRadius = 20;
-            BReiniciar.CustomizableEdges = customizableEdges4;
+            BReiniciar.CustomizableEdges = customizableEdges13;
             BReiniciar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             BReiniciar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             BReiniciar.DisabledState.FillColor = System.Drawing.Color.FromArgb(169, 169, 169);
@@ -152,7 +152,7 @@ namespace PausasActivas.Modulos
             BReiniciar.ForeColor = System.Drawing.Color.White;
             BReiniciar.Location = new System.Drawing.Point(440, 304);
             BReiniciar.Name = "BReiniciar";
-            BReiniciar.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            BReiniciar.ShadowDecoration.CustomizableEdges = customizableEdges14;
             BReiniciar.Size = new System.Drawing.Size(166, 66);
             BReiniciar.TabIndex = 4;
             BReiniciar.Text = "🔄 Reiniciar";
@@ -161,14 +161,15 @@ namespace PausasActivas.Modulos
             // guna2ProgressBar1
             // 
             guna2ProgressBar1.BackColor = System.Drawing.Color.FromArgb(91, 104, 140);
-            guna2ProgressBar1.CustomizableEdges = customizableEdges6;
+            guna2ProgressBar1.CustomizableEdges = customizableEdges15;
             guna2ProgressBar1.Location = new System.Drawing.Point(39, 523);
             guna2ProgressBar1.Name = "guna2ProgressBar1";
-            guna2ProgressBar1.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            guna2ProgressBar1.ShadowDecoration.CustomizableEdges = customizableEdges16;
             guna2ProgressBar1.Size = new System.Drawing.Size(638, 25);
             guna2ProgressBar1.TabIndex = 5;
             guna2ProgressBar1.Text = "guna2ProgressBar1";
             guna2ProgressBar1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            guna2ProgressBar1.ValueChanged += guna2ProgressBar1_ValueChanged;
             // 
             // label3
             // 
@@ -176,7 +177,7 @@ namespace PausasActivas.Modulos
             label3.ForeColor = System.Drawing.Color.FromArgb(16, 3, 99);
             label3.Location = new System.Drawing.Point(39, 493);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(231, 27);
+            label3.Size = new System.Drawing.Size(279, 32);
             label3.TabIndex = 6;
             label3.Text = "👁️ Regla 20 / 20 /20";
             // 
@@ -186,33 +187,34 @@ namespace PausasActivas.Modulos
             label4.ForeColor = System.Drawing.Color.FromArgb(16, 3, 99);
             label4.Location = new System.Drawing.Point(29, 551);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(250, 27);
+            label4.Size = new System.Drawing.Size(305, 32);
             label4.TabIndex = 8;
             label4.Text = "👣 Reto de movimiento";
             // 
             // guna2ProgressBar2
             // 
             guna2ProgressBar2.BackColor = System.Drawing.Color.FromArgb(91, 104, 140);
-            guna2ProgressBar2.CustomizableEdges = customizableEdges8;
+            guna2ProgressBar2.CustomizableEdges = customizableEdges17;
             guna2ProgressBar2.Location = new System.Drawing.Point(39, 592);
             guna2ProgressBar2.Name = "guna2ProgressBar2";
-            guna2ProgressBar2.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            guna2ProgressBar2.ShadowDecoration.CustomizableEdges = customizableEdges18;
             guna2ProgressBar2.Size = new System.Drawing.Size(638, 20);
             guna2ProgressBar2.TabIndex = 7;
             guna2ProgressBar2.Text = "guna2ProgressBar2";
             guna2ProgressBar2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
-            // label5
+            // labelMicropausa
             // 
-            label5.AutoSize = true;
-            label5.BackColor = System.Drawing.Color.Transparent;
-            label5.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label5.ForeColor = System.Drawing.Color.FromArgb(91, 104, 140);
-            label5.Location = new System.Drawing.Point(440, 493);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(237, 20);
-            label5.TabIndex = 9;
-            label5.Text = "Próxima micropausa en 00:00";
+            labelMicropausa.AutoSize = true;
+            labelMicropausa.BackColor = System.Drawing.Color.Transparent;
+            labelMicropausa.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            labelMicropausa.ForeColor = System.Drawing.Color.FromArgb(91, 104, 140);
+            labelMicropausa.Location = new System.Drawing.Point(440, 493);
+            labelMicropausa.Name = "labelMicropausa";
+            labelMicropausa.Size = new System.Drawing.Size(298, 25);
+            labelMicropausa.TabIndex = 9;
+            labelMicropausa.Text = "Próxima micropausa en 00:00";
+            labelMicropausa.Click += labelMicropausa_Click;
             // 
             // label6
             // 
@@ -222,7 +224,7 @@ namespace PausasActivas.Modulos
             label6.ForeColor = System.Drawing.Color.FromArgb(91, 104, 140);
             label6.Location = new System.Drawing.Point(499, 558);
             label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(178, 20);
+            label6.Size = new System.Drawing.Size(225, 25);
             label6.TabIndex = 10;
             label6.Text = "Próximo reto en 00:00";
             // 
@@ -244,7 +246,7 @@ namespace PausasActivas.Modulos
             menuStrip1.Items.AddRange(new ToolStripItem[] { salirToolStripMenuItem });
             menuStrip1.Location = new System.Drawing.Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new System.Drawing.Size(725, 29);
+            menuStrip1.Size = new System.Drawing.Size(725, 35);
             menuStrip1.TabIndex = 12;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -253,7 +255,7 @@ namespace PausasActivas.Modulos
             salirToolStripMenuItem.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, 0);
             salirToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            salirToolStripMenuItem.Size = new System.Drawing.Size(62, 25);
+            salirToolStripMenuItem.Size = new System.Drawing.Size(76, 31);
             salirToolStripMenuItem.Text = "Salir";
             salirToolStripMenuItem.Click += salirToolStripMenuItem_Click;
             // 
@@ -286,7 +288,7 @@ namespace PausasActivas.Modulos
             Controls.Add(PBPomodoro);
             Controls.Add(BReiniciar);
             Controls.Add(guna2ProgressBar2);
-            Controls.Add(label5);
+            Controls.Add(labelMicropausa);
             Controls.Add(label3);
             Controls.Add(menuStrip1);
             Controls.Add(guna2ProgressBar1);
@@ -340,7 +342,7 @@ namespace PausasActivas.Modulos
                 BInicioPausa.Text = "⏸️ Pausar";
                 timer.Start();
             }
-            else 
+            else
             {
                 BInicioPausa.Text = "⏩ Reanudar";
                 timer.Stop();
@@ -355,6 +357,16 @@ namespace PausasActivas.Modulos
             PBPomodoro.Value = 0;
             BInicioPausa.Text = "⏩ Iniciar";
             tiempoRestante = 3600;
+        }
+
+        private void guna2ProgressBar1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelMicropausa_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
