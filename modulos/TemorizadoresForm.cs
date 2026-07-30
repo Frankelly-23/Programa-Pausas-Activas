@@ -282,7 +282,7 @@ namespace PausasActivas.Modulos
             label7.Name = "label7";
             label7.Size = new System.Drawing.Size(376, 48);
             label7.TabIndex = 11;
-            label7.Text = "🔔 Recibiras una notificación suave cada 2 minutos antes de cada cambio de fase.";
+            label7.Text = "🔔 Recibiras una notificación suave 2 minutos antes de cada cambio de fase.";
             // 
             // menuStrip1
             // 

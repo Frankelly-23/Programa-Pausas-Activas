@@ -9,6 +9,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|c:\\users\\lusia\\downloads\\proyecto\\modulos\\temorizadoresform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|solutionrelative:modulos\\temorizadoresform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|c:\\users\\lusia\\downloads\\proyecto\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,11 +22,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\lusia\\Downloads\\proyecto\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Users\\lusia\\Downloads\\proyecto\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-07-30T14:24:47.678Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -44,7 +61,7 @@
               "RelativeDocumentMoniker": "modulos\\TemorizadoresForm.cs",
               "ToolTip": "C:\\Users\\lusia\\Downloads\\proyecto\\modulos\\TemorizadoresForm.cs",
               "RelativeToolTip": "modulos\\TemorizadoresForm.cs",
-              "ViewState": "AgIAAKgBAAAAAAAAAAAgwMoBAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAMABAAAAAAAAAAAgwOIBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-30T13:39:58.637Z",
               "EditorCaption": ""
