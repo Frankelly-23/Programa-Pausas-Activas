@@ -506,6 +506,7 @@ namespace PausasActivas.Modulos
         private void TemorizadoresForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             notificacionSuave.Dispose();
+            // TODO(Frankelly) Equipo 1: construir la UI aquí
         }
     }
 }
