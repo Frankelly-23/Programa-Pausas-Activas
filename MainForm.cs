@@ -14,9 +14,8 @@ namespace PausasActivas
         // ── Equipo 1 ──────────────────────────────────────────
         private void btnTemporizadores_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            TemorizadoresForm tempForm = new TemorizadoresForm();
-            tempForm.ShowDialog();
+            using (var modulo = new TemorizadoresForm())
+                modulo.ShowDialog(this);
 
         }
 
