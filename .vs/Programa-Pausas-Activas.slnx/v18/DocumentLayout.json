@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\lusia\\Downloads\\proyecto\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|c:\\users\\lusia\\downloads\\proyecto\\modulos\\temorizadoresform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|solutionrelative:modulos\\temorizadoresform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|c:\\users\\lusia\\downloads\\proyecto\\modulos\\temorizadoresform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|solutionrelative:modulos\\temorizadoresform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|C:\\Users\\lusia\\Downloads\\proyecto\\modulos\\temorizadoresform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{84134AD6-F71E-654E-64C4-E458274CEE0F}|forms.csproj|solutionrelative:modulos\\temorizadoresform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,25 +38,25 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "TemorizadoresForm.cs",
               "DocumentMoniker": "C:\\Users\\lusia\\Downloads\\proyecto\\modulos\\TemorizadoresForm.cs",
               "RelativeDocumentMoniker": "modulos\\TemorizadoresForm.cs",
-              "ToolTip": "C:\\Users\\lusia\\Downloads\\proyecto\\modulos\\TemorizadoresForm.cs",
-              "RelativeToolTip": "modulos\\TemorizadoresForm.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAkwOMBAAABAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\lusia\\Downloads\\proyecto\\modulos\\TemorizadoresForm.cs*",
+              "RelativeToolTip": "modulos\\TemorizadoresForm.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-30T13:39:58.637Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "TemorizadoresForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\lusia\\Downloads\\proyecto\\modulos\\TemorizadoresForm.cs",
               "RelativeDocumentMoniker": "modulos\\TemorizadoresForm.cs",
-              "ToolTip": "C:\\Users\\lusia\\Downloads\\proyecto\\modulos\\TemorizadoresForm.cs [Design]",
-              "RelativeToolTip": "modulos\\TemorizadoresForm.cs [Design]",
+              "ToolTip": "C:\\Users\\lusia\\Downloads\\proyecto\\modulos\\TemorizadoresForm.cs [Design]*",
+              "RelativeToolTip": "modulos\\TemorizadoresForm.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-30T03:53:25.407Z",
               "EditorCaption": " [Design]"

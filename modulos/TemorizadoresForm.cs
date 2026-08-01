@@ -31,9 +31,17 @@ namespace PausasActivas.Modulos
         // Timer dedicado para el Reto de movimiento
         private System.Windows.Forms.Timer timerReto;
 
+        // Notificación suave para avisos de cambio de fase
+        private NotifyIcon notificacionSuave;
+
         public TemorizadoresForm()
         {
             InitializeComponent();
+
+            //  Inicialización de la notificación suave
+            notificacionSuave = new NotifyIcon();
+            notificacionSuave.Icon = System.Drawing.SystemIcons.Information;
+            notificacionSuave.Visible = true;
 
             // Configuración de la regla 20/20/20
             guna2ProgressBar1.Minimum = 0;
@@ -330,6 +338,8 @@ namespace PausasActivas.Modulos
             MainMenuStrip = menuStrip1;
             Name = "TemorizadoresForm";
             Text = "Temporizadores y Alarmas";
+            // >>> NUEVO: liberar el NotifyIcon al cerrar el formulario
+            FormClosed += TemorizadoresForm_FormClosed;
             PBPomodoro.ResumeLayout(false);
             PBPomodoro.PerformLayout();
             menuStrip1.ResumeLayout(false);
@@ -362,6 +372,17 @@ namespace PausasActivas.Modulos
                 int segundos = tiempoRestante % 60;
 
                 labelTiempo.Text = $"{minutos:00}:{segundos:00}";
+
+                // >>> NUEVO: Notificación suave 2 minutos antes del cambio de fase
+                if (tiempoRestante == 120)
+                {
+                    notificacionSuave.ShowBalloonTip(
+                        3000,
+                        "🔔 Cambio de fase próximo",
+                        "Quedan 2 minutos para el cambio de fase del cronómetro principal.",
+                        ToolTipIcon.Info);
+                    SystemSounds.Asterisk.Play();
+                }
             }
         }
         private void BReiniciar_Click(object sender, EventArgs e)
@@ -479,6 +500,12 @@ namespace PausasActivas.Modulos
                 tiempoReto--;
                 guna2ProgressBar2.Value += 1;
             }
+        }
+
+        
+        private void TemorizadoresForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            notificacionSuave.Dispose();
         }
     }
 }
