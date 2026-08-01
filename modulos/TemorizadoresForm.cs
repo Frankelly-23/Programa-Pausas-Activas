@@ -21,7 +21,7 @@ namespace PausasActivas.Modulos
         private Label labelRetoDeMovimiento;
         private Label label7;
         private MenuStrip menuStrip1;
-        private Timer timer;
+        private System.Windows.Forms.Timer timer;
         private System.ComponentModel.IContainer components;
         private ToolStripMenuItem salirToolStripMenuItem;
 
@@ -108,7 +108,7 @@ namespace PausasActivas.Modulos
             label7 = new Label();
             menuStrip1 = new MenuStrip();
             salirToolStripMenuItem = new ToolStripMenuItem();
-            timer = new Timer(components);
+            timer = new System.Windows.Forms.Timer(components);
             PBPomodoro.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
