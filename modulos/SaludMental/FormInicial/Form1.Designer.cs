@@ -1,4 +1,6 @@
-﻿namespace PausasActivas.Modulos
+using System.Windows.Forms;
+
+namespace PausasActivas.Modulos
 {
     partial class Form1
     {

@@ -1,9 +1,9 @@
-﻿using NAudio.Wave;
+using NAudio.Wave;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Software_ergonomico
+namespace PausasActivas.Modulos
 {
     internal class LoopStream : WaveStream
     {
@@ -49,6 +49,4 @@ namespace Software_ergonomico
             return totalBytesRead;
         }
     }
-        }
-    
-
+}

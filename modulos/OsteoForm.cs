@@ -29,7 +29,7 @@ namespace PausasActivas.Modulos
         private System.Windows.Forms.Label LabelEstiramiento;
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Timer timer1;
+        private System.Windows.Forms.Timer timer1;
         private Guna.UI2.WinForms.Guna2ProgressBar TemporizadorBar;
         private Label Volver;
         private System.ComponentModel.IContainer components;
@@ -69,7 +69,7 @@ namespace PausasActivas.Modulos
             BotonSiguiente = new Guna.UI2.WinForms.Guna2Button();
             BotonPausa = new Guna.UI2.WinForms.Guna2Button();
             BotonAnterior = new Guna.UI2.WinForms.Guna2Button();
-            timer1 = new Timer(components);
+            timer1 = new System.Windows.Forms.Timer(components);
             TemporizadorBar = new Guna.UI2.WinForms.Guna2ProgressBar();
             Volver = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();

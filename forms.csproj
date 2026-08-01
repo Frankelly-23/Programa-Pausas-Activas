@@ -2,11 +2,13 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net10.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
     <UseWindowsForms>true</UseWindowsForms>
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Guna.UI2.WinForms" Version="2.0.4.8" />
+    <PackageReference Include="NAudio" Version="2.2.1" />
   </ItemGroup>
   <ItemGroup>
     <!-- Copia las imágenes de los estiramientos (y la de completado) a la carpeta de salida, preservando la estructura de carpetas -->
