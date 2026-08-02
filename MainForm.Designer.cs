@@ -270,9 +270,9 @@ namespace PausasActivas
             lblTempDesc.Text = "Configura recordatorios de pausas activas";
 
             lblTempStat.AutoSize = true;
-            lblTempStat.Font = new Font("Segoe UI", 9F, FontStyle.Italic);
-            lblTempStat.ForeColor = Color.FromArgb(109, 158, 226);
-            lblTempStat.Location = new Point(30, 108);
+            lblTempStat.Font = new Font("Segoe UI Semibold", 10.5F);
+            lblTempStat.ForeColor = Color.FromArgb(40, 100, 190);
+            lblTempStat.Location = new Point(30, 105);
             lblTempStat.Text = "0 usos";
 
             // ── panelOsteo ───────────────────────────────────────
@@ -302,9 +302,9 @@ namespace PausasActivas
             lblOsteoDesc.Text = "Ejercicios de estiramiento guiados";
 
             lblOsteoStat.AutoSize = true;
-            lblOsteoStat.Font = new Font("Segoe UI", 9F, FontStyle.Italic);
-            lblOsteoStat.ForeColor = Color.FromArgb(109, 158, 226);
-            lblOsteoStat.Location = new Point(30, 108);
+            lblOsteoStat.Font = new Font("Segoe UI Semibold", 10.5F);
+            lblOsteoStat.ForeColor = Color.FromArgb(40, 100, 190);
+            lblOsteoStat.Location = new Point(30, 105);
             lblOsteoStat.Text = "0 usos";
 
             // ── panelSaludMental ─────────────────────────────────
@@ -334,9 +334,9 @@ namespace PausasActivas
             lblMentalDesc.Text = "Ejercicios de respiración y relajación";
 
             lblMentalStat.AutoSize = true;
-            lblMentalStat.Font = new Font("Segoe UI", 9F, FontStyle.Italic);
-            lblMentalStat.ForeColor = Color.FromArgb(109, 158, 226);
-            lblMentalStat.Location = new Point(30, 108);
+            lblMentalStat.Font = new Font("Segoe UI Semibold", 10.5F);
+            lblMentalStat.ForeColor = Color.FromArgb(40, 100, 190);
+            lblMentalStat.Location = new Point(30, 105);
             lblMentalStat.Text = "0 usos";
 
             // ── panelSedentarismo ────────────────────────────────
@@ -366,9 +366,9 @@ namespace PausasActivas
             lblSedDesc.Text = "Hidratación y movimiento activo";
 
             lblSedStat.AutoSize = true;
-            lblSedStat.Font = new Font("Segoe UI", 9F, FontStyle.Italic);
-            lblSedStat.ForeColor = Color.FromArgb(109, 158, 226);
-            lblSedStat.Location = new Point(30, 108);
+            lblSedStat.Font = new Font("Segoe UI Semibold", 10.5F);
+            lblSedStat.ForeColor = Color.FromArgb(40, 100, 190);
+            lblSedStat.Location = new Point(30, 105);
             lblSedStat.Text = "0 usos";
 
             // ═══════════════════════════════════════════════════════

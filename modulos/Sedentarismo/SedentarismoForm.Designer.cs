@@ -36,8 +36,8 @@ namespace PausasActivas.Modulos
             //  PANEL PRINCIPAL: FONDO Y TAMAÑO
             // ============================================================
             this.BackColor = System.Drawing.Color.FromArgb(243, 248, 253);
-            this.ClientSize = new System.Drawing.Size(800, 680);
-            this.MinimumSize = new System.Drawing.Size(800, 680);
+            this.ClientSize = new System.Drawing.Size(800, 700);
+            this.MinimumSize = new System.Drawing.Size(800, 700);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -354,8 +354,31 @@ namespace PausasActivas.Modulos
             this.btnPin.Text = "📌";
             this.btnPin.Click += new EventHandler(this.btnPin_Click);
 
+            // ============================================================
+            //  BOTÓN VOLVER
+            // ============================================================
+            Guna.UI2.WinForms.Suite.CustomizableEdges ceVolver1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges ceVolver2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            this.btnVolver = new Guna2Button();
+            this.btnVolver.Animated = true;
+            this.btnVolver.BorderRadius = 12;
+            this.btnVolver.CustomizableEdges = ceVolver1;
+            this.btnVolver.FillColor = Color.Transparent;
+            this.btnVolver.Font = new Font("Segoe UI", 10F);
+            this.btnVolver.ForeColor = Color.FromArgb(91, 104, 140);
+            this.btnVolver.HoverState.FillColor = Color.FromArgb(230, 240, 250);
+            this.btnVolver.HoverState.ForeColor = Color.FromArgb(16, 3, 99);
+            this.btnVolver.Location = new Point(15, 650);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.ShadowDecoration.CustomizableEdges = ceVolver2;
+            this.btnVolver.Size = new Size(120, 40);
+            this.btnVolver.TabIndex = 98;
+            this.btnVolver.Text = "← Volver";
+            this.btnVolver.Click += new EventHandler(this.btnVolver_Click);
+
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnPin);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -373,6 +396,7 @@ namespace PausasActivas.Modulos
         }
 
         // Declaración de los controles (como campos de clase)
+        private Guna2Button btnVolver;
         private Guna2Button btnPin;
         private Panel panel1;
         private PictureBox pictureBox1;

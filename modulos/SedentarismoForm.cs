@@ -806,5 +806,10 @@ namespace PausasActivas.Modulos
             btnPin.FillColor = this.TopMost ? Color.FromArgb(16, 3, 99) : Color.Transparent;
             btnPin.ForeColor = this.TopMost ? Color.White : Color.FromArgb(16, 3, 99);
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

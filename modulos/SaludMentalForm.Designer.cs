@@ -75,7 +75,7 @@ namespace PausasActivas.Modulos
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1344, 120);
+            panel1.Size = new Size(1344, 130);
             panel1.TabIndex = 0;
             // 
             // btnPin
@@ -100,7 +100,7 @@ namespace PausasActivas.Modulos
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(16, 3, 99);
-            label2.Location = new Point(24, 68);
+            label2.Location = new Point(24, 78);
             label2.Name = "label2";
             label2.Size = new Size(265, 32);
             label2.TabIndex = 1;
