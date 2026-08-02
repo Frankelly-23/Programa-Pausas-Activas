@@ -1,4 +1,4 @@
-﻿using Guna.UI2.WinForms;
+using Guna.UI2.WinForms;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -55,22 +55,22 @@ namespace PausasActivas.Modulos
             this.panel1.BackColor = System.Drawing.Color.FromArgb(243, 248, 253);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(20, 20);
+            this.panel1.Location = new System.Drawing.Point(10, 15);
             this.panel1.Size = new System.Drawing.Size(320, 60);
             this.panel1.TabIndex = 0;
 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = CargarImagen("ruta_gota_agua.png"); // Reemplaza con tu imagen
-            this.pictureBox1.Location = new System.Drawing.Point(10, 10);
+            this.pictureBox1.Location = new System.Drawing.Point(5, 8);
             this.pictureBox1.Size = new System.Drawing.Size(42, 42);
             this.pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(16, 3, 99);
-            this.label1.Location = new System.Drawing.Point(60, 10);
+            this.label1.Location = new System.Drawing.Point(50, 5);
             this.label1.Text = "Hidratación";
             this.label1.TabIndex = 1;
 
@@ -82,7 +82,7 @@ namespace PausasActivas.Modulos
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 15F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(16, 3, 99);
-            this.label2.Location = new System.Drawing.Point(640, 35);
+            this.label2.Location = new System.Drawing.Point(550, 22);
             this.label2.Size = new System.Drawing.Size(137, 35);
             this.label2.Text = "0 / 8 vasos";
             this.label2.TabIndex = 1;
@@ -335,6 +335,28 @@ namespace PausasActivas.Modulos
             // ============================================================
             //  AGREGAR CONTROLES AL FORMULARIO
             // ============================================================
+            Guna.UI2.WinForms.Suite.CustomizableEdges cePin1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges cePin2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            this.btnPin = new Guna2Button();
+            this.btnPin.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            this.btnPin.Animated = true;
+            this.btnPin.BorderRadius = 12;
+            this.btnPin.CustomizableEdges = cePin1;
+            this.btnPin.FillColor = Color.Transparent;
+            this.btnPin.Font = new Font("Segoe UI Emoji", 14F);
+            this.btnPin.ForeColor = Color.FromArgb(16, 3, 99);
+            this.btnPin.HoverState.FillColor = Color.FromArgb(140, 195, 235);
+            this.btnPin.Location = new Point(725, 15);
+            this.btnPin.Name = "btnPin";
+            this.btnPin.ShadowDecoration.CustomizableEdges = cePin2;
+            this.btnPin.Size = new Size(50, 42);
+            this.btnPin.TabIndex = 99;
+            this.btnPin.Text = "📌";
+            this.btnPin.Click += new EventHandler(this.btnPin_Click);
+
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.Controls.Add(this.btnPin);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -351,6 +373,7 @@ namespace PausasActivas.Modulos
         }
 
         // Declaración de los controles (como campos de clase)
+        private Guna2Button btnPin;
         private Panel panel1;
         private PictureBox pictureBox1;
         private Label label1;

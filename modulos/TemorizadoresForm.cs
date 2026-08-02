@@ -2,6 +2,8 @@ using System;
 using System.Windows.Forms;
 using System.Media;
 using System.Diagnostics.Eventing.Reader;
+using System.IO;
+using System.Text.Json;
 
 namespace PausasActivas.Modulos
 {
@@ -62,7 +64,11 @@ namespace PausasActivas.Modulos
             timerReto.Interval = 1000;
             timerReto.Tick += timerReto_Tick;
             // Ya no se inicia aquí: ahora arranca junto con el cronómetro principal (BInicioPausa_Click)
+
+            CargarDatos();
         }
+
+        private static readonly string rutaArchivo = Path.Combine(Application.StartupPath, "Data", "temporizadores_data.json");
 
         //Variables a utilizar
         int tiempoRestante = 3600; //los 60 minutos en segundos
@@ -533,6 +539,7 @@ namespace PausasActivas.Modulos
         
         private void TemorizadoresForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            GuardarDatos();
             notificacionSuave.Dispose();
             // TODO(Frankelly) Equipo 1: construir la UI aquí
         }
@@ -544,5 +551,77 @@ namespace PausasActivas.Modulos
             btnPin.ForeColor = this.TopMost ? System.Drawing.Color.White : System.Drawing.Color.FromArgb(16, 3, 99);
         }
         private Guna.UI2.WinForms.Guna2Button btnPin;
+
+        private void GuardarDatos()
+        {
+            try
+            {
+                Directory.CreateDirectory(Path.GetDirectoryName(rutaArchivo));
+                var datos = new DatosTemporizadores
+                {
+                    TiempoRestante = tiempoRestante,
+                    TiempoMicropausa = tiempoMicropausa,
+                    TiempoReto = tiempoReto,
+                    TimerActivo = timer.Enabled,
+                    FechaGuardado = DateTime.Now
+                };
+                string json = JsonSerializer.Serialize(datos, new JsonSerializerOptions { WriteIndented = true });
+                File.WriteAllText(rutaArchivo, json);
+            }
+            catch { }
+        }
+
+        private bool CargarDatos()
+        {
+            try
+            {
+                if (File.Exists(rutaArchivo))
+                {
+                    string json = File.ReadAllText(rutaArchivo);
+                    var datos = JsonSerializer.Deserialize<DatosTemporizadores>(json);
+                    if (datos != null)
+                    {
+                        tiempoRestante = datos.TiempoRestante;
+                        tiempoMicropausa = datos.TiempoMicropausa;
+                        tiempoReto = datos.TiempoReto;
+
+                        // If timers were active, subtract elapsed time
+                        if (datos.TimerActivo)
+                        {
+                            int elapsed = (int)(DateTime.Now - datos.FechaGuardado).TotalSeconds;
+                            tiempoRestante = Math.Max(0, tiempoRestante - elapsed);
+                            tiempoMicropausa = Math.Max(0, tiempoMicropausa - elapsed);
+                            tiempoReto = Math.Max(0, tiempoReto - elapsed);
+                        }
+
+                        // Update UI
+                        int minutos = tiempoRestante / 60;
+                        int segundos = tiempoRestante % 60;
+                        labelTiempo.Text = $"{minutos:00}:{segundos:00}";
+                        PBPomodoro.Maximum = 3600;
+                        PBPomodoro.Value = Math.Min(3600 - tiempoRestante, 3600);
+
+                        guna2ProgressBar1.Maximum = 1200;
+                        guna2ProgressBar1.Value = Math.Min(1200 - tiempoMicropausa, 1200);
+
+                        guna2ProgressBar2.Maximum = 1800;
+                        guna2ProgressBar2.Value = Math.Min(1800 - tiempoReto, 1800);
+
+                        return true;
+                    }
+                }
+            }
+            catch { }
+            return false;
+        }
+
+        private class DatosTemporizadores
+        {
+            public int TiempoRestante { get; set; }
+            public int TiempoMicropausa { get; set; }
+            public int TiempoReto { get; set; }
+            public bool TimerActivo { get; set; }
+            public DateTime FechaGuardado { get; set; }
+        }
     }
 }

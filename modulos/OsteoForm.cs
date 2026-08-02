@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
 using System.IO;
+using System.Text.Json;
 
 namespace PausasActivas.Modulos
 
@@ -38,6 +39,7 @@ namespace PausasActivas.Modulos
         public OsteoForm()
         {
             InitializeComponent();
+            CargarDatos();
             this.Text = "Prevención Osteomuscular";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 
@@ -345,6 +347,7 @@ namespace PausasActivas.Modulos
         }
 
 
+        private static readonly string rutaArchivo = Path.Combine(Application.StartupPath, "Data", "osteo_data.json");
         private int paso;
         private int paso_total;
 
@@ -564,6 +567,7 @@ namespace PausasActivas.Modulos
         private void btnVolver_Click(object sender, System.EventArgs e)
         {
             timer1.Stop();
+            GuardarDatos();
             this.Close();
         }
 
@@ -574,5 +578,77 @@ namespace PausasActivas.Modulos
             btnPin.ForeColor = this.TopMost ? Color.White : Color.FromArgb(16, 3, 99);
         }
         private Guna.UI2.WinForms.Guna2Button btnPin;
+
+        private class DatosOsteo
+        {
+            public string CarpetaActual { get; set; }
+            public string PrefijoArchivoActual { get; set; }
+            public int Paso { get; set; }
+            public int PasoTotal { get; set; }
+        }
+
+        private void GuardarDatos()
+        {
+            try
+            {
+                Directory.CreateDirectory(Path.GetDirectoryName(rutaArchivo));
+                var datos = new DatosOsteo
+                {
+                    CarpetaActual = carpetaActual,
+                    PrefijoArchivoActual = prefijoArchivoActual,
+                    Paso = paso,
+                    PasoTotal = paso_total
+                };
+                string json = System.Text.Json.JsonSerializer.Serialize(datos, new System.Text.Json.JsonSerializerOptions { WriteIndented = true });
+                File.WriteAllText(rutaArchivo, json);
+            }
+            catch { }
+        }
+
+        private void CargarDatos()
+        {
+            try
+            {
+                if (File.Exists(rutaArchivo))
+                {
+                    string json = File.ReadAllText(rutaArchivo);
+                    var datos = System.Text.Json.JsonSerializer.Deserialize<DatosOsteo>(json);
+                    if (datos != null && !string.IsNullOrEmpty(datos.CarpetaActual))
+                    {
+                        string nombreMostrado = datos.CarpetaActual switch
+                        {
+                            "Cuello" => "Estiramiento de Cuello",
+                            "Espalda" => "Estiramiento de Espalda",
+                            "Muneca" => "Estiramiento de muñecas",
+                            _ => datos.CarpetaActual
+                        };
+                        IniciarEstiramiento(nombreMostrado, datos.CarpetaActual, datos.PrefijoArchivoActual, datos.PasoTotal);
+                        // Navigate to saved step
+                        while (paso < datos.Paso && paso < paso_total)
+                        {
+                            paso++;
+                        }
+                        LabelPaso.Text = $"Paso {paso} de {paso_total}";
+                        TemporizadorBar.Value = 0;
+                        CargarImagenPaso();
+                        // Highlight the correct button
+                        switch (datos.CarpetaActual)
+                        {
+                            case "Cuello": ActivarBoton(botonCuello); break;
+                            case "Muneca": ActivarBoton(BotonMuñeca); break;
+                            case "Espalda": ActivarBoton(BotonEspalda); break;
+                        }
+                    }
+                }
+            }
+            catch { }
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            timer1.Stop();
+            GuardarDatos();
+            base.OnFormClosing(e);
+        }
     }
 }

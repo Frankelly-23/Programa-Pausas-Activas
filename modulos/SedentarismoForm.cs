@@ -29,7 +29,7 @@ namespace PausasActivas.Modulos
         private bool actualizandoDesdeCodigo = false;
 
         // Ruta del archivo JSON
-        private string rutaArchivo = Path.Combine(Application.StartupPath, "Data\\sedentarismo_data.json");
+        private string rutaArchivo = Path.Combine(Application.StartupPath, "Data", "sedentarismo_data.json");
 
         public SedentarismoForm()
         {
@@ -38,14 +38,20 @@ namespace PausasActivas.Modulos
             InicializarMovimiento();
 
             this.Text = "Anti-Sedentarismo";
-            this.Size = new System.Drawing.Size(600, 450);
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 
             // Cargar datos guardados
-            CargarDatos();
+            bool datosCargados = CargarDatos();
+            ActualizarUI();
+            ActualizarMovimiento();
 
-            // Iniciar el contador automáticamente
-            IniciarContadorMovimiento();
+            if (!datosCargados)
+            {
+                // Iniciar el contador automáticamente
+                IniciarContadorMovimiento();
+            }
         }
 
         private void InicializarHidratacion()
@@ -520,10 +526,10 @@ namespace PausasActivas.Modulos
                 panel3.Location = new Point(margen, panel3.Location.Y);
             }
 
-            // Ajustar label2 (derecha)
+            // Ajustar label2 (derecha, a la izquierda del botón Pin)
             if (label2 != null)
             {
-                label2.Location = new Point(anchoDisponible - label2.Width - margen, label2.Location.Y);
+                label2.Location = new Point(anchoDisponible - label2.Width - margen - 65, label2.Location.Y);
             }
 
             // Ajustar label3 (derecha)
@@ -725,6 +731,7 @@ namespace PausasActivas.Modulos
                     WriteIndented = true
                 });
 
+                Directory.CreateDirectory(Path.GetDirectoryName(rutaArchivo));
                 File.WriteAllText(rutaArchivo, jsonString);
             }
             catch (Exception ex)
@@ -734,7 +741,7 @@ namespace PausasActivas.Modulos
             }
         }
 
-        private void CargarDatos()
+        private bool CargarDatos()
         {
             try
             {
@@ -767,6 +774,7 @@ namespace PausasActivas.Modulos
                                     segundosRestantes = 0;
                                 }
                             }
+                            return true;
                         }
                         else
                         {
@@ -781,6 +789,7 @@ namespace PausasActivas.Modulos
                 Console.WriteLine($"Error al cargar: {ex.Message}");
                 ReiniciarDatosDiarios();
             }
+            return false;
         }
 
         private void ReiniciarDatosDiarios()
@@ -789,6 +798,13 @@ namespace PausasActivas.Modulos
             metaVasos = 8;
             segundosRestantes = INTERVALO_MOVIMIENTO;
             alertaActiva = false;
+        }
+
+        private void btnPin_Click(object sender, EventArgs e)
+        {
+            this.TopMost = !this.TopMost;
+            btnPin.FillColor = this.TopMost ? Color.FromArgb(16, 3, 99) : Color.Transparent;
+            btnPin.ForeColor = this.TopMost ? Color.White : Color.FromArgb(16, 3, 99);
         }
     }
 }

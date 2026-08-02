@@ -17,6 +17,7 @@ namespace PausasActivas.Modulos
             ConectarEventosRespiracion();
             IniciarRespiracion();
             PausarRespiracion();
+            CargarPreferencias();
         }
 
        
@@ -36,6 +37,50 @@ namespace PausasActivas.Modulos
         private AudioFileReader _lectorAudio;
         private LoopStream _loopAudio;
         private readonly string _carpetaSonidos = Path.Combine(Application.StartupPath, "Sonidos");
+        
+        private string _sonidoActual = "";
+        
+        private static readonly string rutaPreferencias = Path.Combine(Application.StartupPath, "Data", "saludmental_data.json");
+        
+        private class PreferenciasSaludMental
+        {
+            public int Volumen { get; set; } = 50;
+            public string SonidoSeleccionado { get; set; } = "";
+        }
+        
+        private void GuardarPreferencias()
+        {
+            try
+            {
+                Directory.CreateDirectory(Path.GetDirectoryName(rutaPreferencias));
+                var prefs = new PreferenciasSaludMental
+                {
+                    Volumen = barravolumen.Value,
+                    SonidoSeleccionado = _sonidoActual ?? ""
+                };
+                string json = System.Text.Json.JsonSerializer.Serialize(prefs, new System.Text.Json.JsonSerializerOptions { WriteIndented = true });
+                File.WriteAllText(rutaPreferencias, json);
+            }
+            catch { }
+        }
+
+        private void CargarPreferencias()
+        {
+            try
+            {
+                if (File.Exists(rutaPreferencias))
+                {
+                    string json = File.ReadAllText(rutaPreferencias);
+                    var prefs = System.Text.Json.JsonSerializer.Deserialize<PreferenciasSaludMental>(json);
+                    if (prefs != null)
+                    {
+                        barravolumen.Value = Math.Max(0, Math.Min(100, prefs.Volumen));
+                        lblvolumen.Text = barravolumen.Value + "%";
+                    }
+                }
+            }
+            catch { }
+        }
 
         private void ConectarEventosRespiracion()
         {
@@ -149,13 +194,29 @@ namespace PausasActivas.Modulos
                 _centroOriginalCirculo.Y - nuevoAlto / 2);
         }
 
-        private void btnsin_Click(object sender, EventArgs e) => DetenerSonido();
+        private void btnsin_Click(object sender, EventArgs e)
+        {
+            DetenerSonido();
+            _sonidoActual = "sin";
+        }
 
-        private void btnnaturaleza_Click(object sender, EventArgs e) => ReproducirSonido("naturaleza");
+        private void btnnaturaleza_Click(object sender, EventArgs e)
+        {
+            ReproducirSonido("naturaleza");
+            _sonidoActual = "naturaleza";
+        }
 
-        private void btnlluvia_Click(object sender, EventArgs e) => ReproducirSonido("lluvia");
+        private void btnlluvia_Click(object sender, EventArgs e)
+        {
+            ReproducirSonido("lluvia");
+            _sonidoActual = "lluvia";
+        }
 
-        private void btncampana_Click(object sender, EventArgs e) => ReproducirSonido("campanas");
+        private void btncampana_Click(object sender, EventArgs e)
+        {
+            ReproducirSonido("campanas");
+            _sonidoActual = "campanas";
+        }
 
         private void ReproducirSonido(string nombreSinExtension)
         {
@@ -224,6 +285,12 @@ namespace PausasActivas.Modulos
         {
             _timerRespiracion?.Stop();
             DetenerSonido();
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            GuardarPreferencias();
+            base.OnFormClosing(e);
         }
 
         protected override void OnFormClosed(FormClosedEventArgs e)
