@@ -16,6 +16,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Link>modulos\ImagenesOsteo\%(RecursiveDir)%(Filename)%(Extension)</Link>
     </Content>
+    <!-- Copia los sonidos del módulo de Salud Mental a la carpeta de salida -->
+    <Content Include="modulos\SaludMental\Sonidos\**\*.mp3;modulos\SaludMental\Sonidos\**\*.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>Sonidos\%(RecursiveDir)%(Filename)%(Extension)</Link>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">

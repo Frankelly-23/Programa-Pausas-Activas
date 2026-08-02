@@ -8,7 +8,7 @@ namespace PausasActivas
     {
         public MainForm()
         {
-            InitializeComponent();
+                InitializeComponent();
         }
 
         // ── Equipo 1 ──────────────────────────────────────────
@@ -16,6 +16,7 @@ namespace PausasActivas
         {
             using (var modulo = new TemorizadoresForm())
                 modulo.ShowDialog(this);
+
         }
 
         // ── Equipo 2 ──────────────────────────────────────────
