@@ -11,6 +11,18 @@
     <Compile Update="modulos\SaludMentalForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="modulos\SaludMental\FormEnfoque\FormEnfoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="modulos\SaludMental\FormInicial\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="modulos\SaludMental\FormRecuperacion\FormRecuperacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="modulos\SaludMental\FormRelajacion\FormRelajacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="modulos\SedentarismoForm.cs">
       <SubType>Form</SubType>
     </Compile>
