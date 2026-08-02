@@ -20,10 +20,10 @@ namespace PausasActivas.Modulos
         private Label labelMicropausa;
         private Label labelRetoDeMovimiento;
         private Label label7;
-        private MenuStrip menuStrip1;
+        private Panel panelHeader;
+        private Guna.UI2.WinForms.Guna2Button btnVolver;
         private System.Windows.Forms.Timer timer;
         private System.ComponentModel.IContainer components;
-        private ToolStripMenuItem salirToolStripMenuItem;
 
         // Timer dedicado para la Regla 20/20/20
         private System.Windows.Forms.Timer timerMicropausa;
@@ -93,6 +93,13 @@ namespace PausasActivas.Modulos
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges ceVolver = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges ceVolverShadow = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges cePin1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges cePin2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            panelHeader = new Panel();
+            btnPin = new Guna.UI2.WinForms.Guna2Button();
+            btnVolver = new Guna.UI2.WinForms.Guna2Button();
             label1 = new Label();
             PBPomodoro = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             label2 = new Label();
@@ -106,19 +113,44 @@ namespace PausasActivas.Modulos
             labelMicropausa = new Label();
             labelRetoDeMovimiento = new Label();
             label7 = new Label();
-            menuStrip1 = new MenuStrip();
-            salirToolStripMenuItem = new ToolStripMenuItem();
             timer = new System.Windows.Forms.Timer(components);
             PBPomodoro.SuspendLayout();
-            menuStrip1.SuspendLayout();
+            panelHeader.SuspendLayout();
             SuspendLayout();
+            // 
+            // panelHeader
+            // 
+            panelHeader.BackColor = System.Drawing.Color.FromArgb(171, 217, 244);
+            panelHeader.Controls.Add(btnPin);
+            panelHeader.Controls.Add(label1);
+            panelHeader.Dock = DockStyle.Top;
+            panelHeader.Height = 80;
+            panelHeader.Name = "panelHeader";
+            panelHeader.TabIndex = 0;
+            // 
+            // btnPin
+            // 
+            btnPin.Animated = true;
+            btnPin.BorderRadius = 12;
+            btnPin.CustomizableEdges = cePin1;
+            btnPin.FillColor = System.Drawing.Color.Transparent;
+            btnPin.Font = new System.Drawing.Font("Segoe UI Emoji", 14F);
+            btnPin.ForeColor = System.Drawing.Color.FromArgb(16, 3, 99);
+            btnPin.HoverState.FillColor = System.Drawing.Color.FromArgb(140, 195, 235);
+            btnPin.Location = new System.Drawing.Point(650, 18);
+            btnPin.Name = "btnPin";
+            btnPin.ShadowDecoration.CustomizableEdges = cePin2;
+            btnPin.Size = new System.Drawing.Size(50, 42);
+            btnPin.TabIndex = 99;
+            btnPin.Text = "📌";
+            btnPin.Click += btnPin_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Georgia", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label1.ForeColor = System.Drawing.Color.FromArgb(16, 3, 99);
-            label1.Location = new System.Drawing.Point(39, 51);
+            label1.Location = new System.Drawing.Point(20, 18);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(332, 43);
             label1.TabIndex = 1;
@@ -131,7 +163,7 @@ namespace PausasActivas.Modulos
             PBPomodoro.FillColor = System.Drawing.Color.FromArgb(200, 213, 218, 223);
             PBPomodoro.Font = new System.Drawing.Font("Segoe UI", 12F);
             PBPomodoro.ForeColor = System.Drawing.Color.FromArgb(109, 158, 226);
-            PBPomodoro.Location = new System.Drawing.Point(82, 192);
+            PBPomodoro.Location = new System.Drawing.Point(82, 222);
             PBPomodoro.Maximum = 3600;
             PBPomodoro.Minimum = 0;
             PBPomodoro.Name = "PBPomodoro";
@@ -167,7 +199,7 @@ namespace PausasActivas.Modulos
             // 
             // BInicioPausa
             // 
-            BInicioPausa.BorderRadius = 20;
+            BInicioPausa.BorderRadius = 12;
             BInicioPausa.CustomizableEdges = customizableEdges2;
             BInicioPausa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             BInicioPausa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -175,9 +207,9 @@ namespace PausasActivas.Modulos
             BInicioPausa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
             BInicioPausa.FillColor = System.Drawing.Color.FromArgb(16, 3, 99);
             BInicioPausa.FocusedColor = System.Drawing.Color.White;
-            BInicioPausa.Font = new System.Drawing.Font("Segoe UI Emoji", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            BInicioPausa.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             BInicioPausa.ForeColor = System.Drawing.Color.White;
-            BInicioPausa.Location = new System.Drawing.Point(440, 217);
+            BInicioPausa.Location = new System.Drawing.Point(440, 247);
             BInicioPausa.Name = "BInicioPausa";
             BInicioPausa.ShadowDecoration.CustomizableEdges = customizableEdges3;
             BInicioPausa.Size = new System.Drawing.Size(166, 66);
@@ -187,7 +219,7 @@ namespace PausasActivas.Modulos
             // 
             // BReiniciar
             // 
-            BReiniciar.BorderRadius = 20;
+            BReiniciar.BorderRadius = 12;
             BReiniciar.CustomizableEdges = customizableEdges4;
             BReiniciar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             BReiniciar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -195,9 +227,9 @@ namespace PausasActivas.Modulos
             BReiniciar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(141, 141, 141);
             BReiniciar.FillColor = System.Drawing.Color.FromArgb(109, 158, 226);
             BReiniciar.FocusedColor = System.Drawing.Color.White;
-            BReiniciar.Font = new System.Drawing.Font("Segoe UI Emoji", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            BReiniciar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             BReiniciar.ForeColor = System.Drawing.Color.White;
-            BReiniciar.Location = new System.Drawing.Point(440, 304);
+            BReiniciar.Location = new System.Drawing.Point(440, 334);
             BReiniciar.Name = "BReiniciar";
             BReiniciar.ShadowDecoration.CustomizableEdges = customizableEdges5;
             BReiniciar.Size = new System.Drawing.Size(166, 66);
@@ -209,7 +241,7 @@ namespace PausasActivas.Modulos
             // 
             guna2ProgressBar1.BackColor = System.Drawing.Color.FromArgb(91, 104, 140);
             guna2ProgressBar1.CustomizableEdges = customizableEdges6;
-            guna2ProgressBar1.Location = new System.Drawing.Point(39, 523);
+            guna2ProgressBar1.Location = new System.Drawing.Point(39, 553);
             guna2ProgressBar1.Name = "guna2ProgressBar1";
             guna2ProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(109, 158, 226);
             guna2ProgressBar1.ProgressColor2 = System.Drawing.Color.FromArgb(109, 158, 226);
@@ -224,7 +256,7 @@ namespace PausasActivas.Modulos
             // 
             label3.AutoSize = true;
             label3.ForeColor = System.Drawing.Color.FromArgb(16, 3, 99);
-            label3.Location = new System.Drawing.Point(39, 493);
+            label3.Location = new System.Drawing.Point(39, 523);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(231, 27);
             label3.TabIndex = 6;
@@ -234,7 +266,7 @@ namespace PausasActivas.Modulos
             // 
             label4.AutoSize = true;
             label4.ForeColor = System.Drawing.Color.FromArgb(16, 3, 99);
-            label4.Location = new System.Drawing.Point(29, 562);
+            label4.Location = new System.Drawing.Point(29, 592);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(250, 27);
             label4.TabIndex = 8;
@@ -244,7 +276,7 @@ namespace PausasActivas.Modulos
             // 
             guna2ProgressBar2.BackColor = System.Drawing.Color.FromArgb(91, 104, 140);
             guna2ProgressBar2.CustomizableEdges = customizableEdges8;
-            guna2ProgressBar2.Location = new System.Drawing.Point(39, 592);
+            guna2ProgressBar2.Location = new System.Drawing.Point(39, 622);
             guna2ProgressBar2.Name = "guna2ProgressBar2";
             guna2ProgressBar2.ProgressColor = System.Drawing.Color.FromArgb(128, 128, 255);
             guna2ProgressBar2.ProgressColor2 = System.Drawing.Color.FromArgb(128, 128, 255);
@@ -259,9 +291,9 @@ namespace PausasActivas.Modulos
             // 
             labelMicropausa.AutoSize = true;
             labelMicropausa.BackColor = System.Drawing.Color.Transparent;
-            labelMicropausa.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            labelMicropausa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             labelMicropausa.ForeColor = System.Drawing.Color.FromArgb(91, 104, 140);
-            labelMicropausa.Location = new System.Drawing.Point(476, 498);
+            labelMicropausa.Location = new System.Drawing.Point(476, 528);
             labelMicropausa.Name = "labelMicropausa";
             labelMicropausa.Size = new System.Drawing.Size(237, 20);
             labelMicropausa.TabIndex = 9;
@@ -272,9 +304,9 @@ namespace PausasActivas.Modulos
             // 
             labelRetoDeMovimiento.AutoSize = true;
             labelRetoDeMovimiento.BackColor = System.Drawing.Color.Transparent;
-            labelRetoDeMovimiento.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            labelRetoDeMovimiento.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             labelRetoDeMovimiento.ForeColor = System.Drawing.Color.FromArgb(91, 104, 140);
-            labelRetoDeMovimiento.Location = new System.Drawing.Point(525, 567);
+            labelRetoDeMovimiento.Location = new System.Drawing.Point(525, 597);
             labelRetoDeMovimiento.Name = "labelRetoDeMovimiento";
             labelRetoDeMovimiento.Size = new System.Drawing.Size(177, 20);
             labelRetoDeMovimiento.TabIndex = 10;
@@ -284,33 +316,31 @@ namespace PausasActivas.Modulos
             // label7
             // 
             label7.BackColor = System.Drawing.Color.Transparent;
-            label7.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label7.ForeColor = System.Drawing.Color.FromArgb(91, 104, 140);
-            label7.Location = new System.Drawing.Point(50, 105);
+            label7.Location = new System.Drawing.Point(50, 135);
             label7.Name = "label7";
             label7.Size = new System.Drawing.Size(376, 48);
             label7.TabIndex = 11;
             label7.Text = "🔔 Recibiras una notificación suave 2 minutos antes de cada cambio de fase.";
             // 
-            // menuStrip1
+            // btnVolver
             // 
-            menuStrip1.BackColor = System.Drawing.Color.FromArgb(109, 158, 226);
-            menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { salirToolStripMenuItem });
-            menuStrip1.Location = new System.Drawing.Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new System.Drawing.Size(725, 29);
-            menuStrip1.TabIndex = 12;
-            menuStrip1.Text = "menuStrip1";
-            // 
-            // salirToolStripMenuItem
-            // 
-            salirToolStripMenuItem.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, 0);
-            salirToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            salirToolStripMenuItem.Size = new System.Drawing.Size(62, 25);
-            salirToolStripMenuItem.Text = "Salir";
-            salirToolStripMenuItem.Click += salirToolStripMenuItem_Click;
+            btnVolver.Animated = true;
+            btnVolver.BorderRadius = 12;
+            btnVolver.CustomizableEdges = ceVolver;
+            btnVolver.FillColor = System.Drawing.Color.Transparent;
+            btnVolver.Font = new System.Drawing.Font("Segoe UI", 10F);
+            btnVolver.ForeColor = System.Drawing.Color.FromArgb(91, 104, 140);
+            btnVolver.HoverState.FillColor = System.Drawing.Color.FromArgb(230, 240, 250);
+            btnVolver.HoverState.ForeColor = System.Drawing.Color.FromArgb(16, 3, 99);
+            btnVolver.Location = new System.Drawing.Point(15, 650);
+            btnVolver.Name = "btnVolver";
+            btnVolver.ShadowDecoration.CustomizableEdges = ceVolverShadow;
+            btnVolver.Size = new System.Drawing.Size(120, 40);
+            btnVolver.TabIndex = 99;
+            btnVolver.Text = "← Volver";
+            btnVolver.Click += btnVolver_Click;
             // 
             // timer
             // 
@@ -320,8 +350,8 @@ namespace PausasActivas.Modulos
             // TemorizadoresForm
             // 
             BackColor = System.Drawing.Color.FromArgb(243, 248, 253);
-            ClientSize = new System.Drawing.Size(725, 669);
-            Controls.Add(label1);
+            ClientSize = new System.Drawing.Size(725, 700);
+            Controls.Add(panelHeader);
             Controls.Add(label7);
             Controls.Add(labelRetoDeMovimiento);
             Controls.Add(BInicioPausa);
@@ -331,36 +361,33 @@ namespace PausasActivas.Modulos
             Controls.Add(guna2ProgressBar2);
             Controls.Add(labelMicropausa);
             Controls.Add(label3);
-            Controls.Add(menuStrip1);
             Controls.Add(guna2ProgressBar1);
-            Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, 0);
+            Controls.Add(btnVolver);
+            Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            MainMenuStrip = menuStrip1;
+            MaximizeBox = false;
             Name = "TemorizadoresForm";
             Text = "Temporizadores y Alarmas";
             // >>> NUEVO: liberar el NotifyIcon al cerrar el formulario
             FormClosed += TemorizadoresForm_FormClosed;
             PBPomodoro.ResumeLayout(false);
             PBPomodoro.PerformLayout();
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
+            panelHeader.ResumeLayout(false);
+            panelHeader.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnVolver_Click(object sender, EventArgs e)
         {
-            var mainForm = new MainForm();
-            mainForm.Show();
             this.Close();
-
         }
         private void timer_Tick(object sender, EventArgs e)
         {
             if (tiempoRestante <= 0)
             {
                 Reset();
-                SystemSounds.Beep.Play();
+                SystemSounds.Asterisk.Play();
                 MessageBox.Show("⭐¡Tiempo terminado!⭐", " 🔔 Notificación");
             }
             else
@@ -394,6 +421,7 @@ namespace PausasActivas.Modulos
         {
             if (BInicioPausa.Text == "⏩ Iniciar" || BInicioPausa.Text == "⏩ Reanudar")
             {
+                SystemSounds.Asterisk.Play();
                 BInicioPausa.Text = "⏸️ Pausar";
 
                 // Al iniciar/reanudar el cronómetro principal, también arrancan
@@ -458,7 +486,7 @@ namespace PausasActivas.Modulos
             {
                 tiempoMicropausa = 1200; // reinicia a 20 minutos
                 guna2ProgressBar1.Value = 0;
-                SystemSounds.Beep.Play();
+                SystemSounds.Asterisk.Play();
                 MessageBox.Show(
                     "👁️ Mira algo a unos 20 pies (6 metros) de distancia durante 20 segundos.",
                     "🔔 Regla 20/20/20");
@@ -490,7 +518,7 @@ namespace PausasActivas.Modulos
             {
                 tiempoReto = 1800; // reinicia a 30 minutos
                 guna2ProgressBar2.Value = 0;
-                SystemSounds.Beep.Play();
+                SystemSounds.Asterisk.Play();
 
                 string reto = retosMovimiento[randomReto.Next(retosMovimiento.Length)];
                 MessageBox.Show(reto, "🏃 Reto de movimiento");
@@ -508,5 +536,13 @@ namespace PausasActivas.Modulos
             notificacionSuave.Dispose();
             // TODO(Frankelly) Equipo 1: construir la UI aquí
         }
+
+        private void btnPin_Click(object sender, EventArgs e)
+        {
+            this.TopMost = !this.TopMost;
+            btnPin.FillColor = this.TopMost ? System.Drawing.Color.FromArgb(16, 3, 99) : System.Drawing.Color.Transparent;
+            btnPin.ForeColor = this.TopMost ? System.Drawing.Color.White : System.Drawing.Color.FromArgb(16, 3, 99);
+        }
+        private Guna.UI2.WinForms.Guna2Button btnPin;
     }
 }

@@ -1,4 +1,4 @@
-﻿using NAudio.Wave;
+using NAudio.Wave;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -226,11 +226,15 @@ namespace PausasActivas.Modulos
             DetenerSonido();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        protected override void OnFormClosed(FormClosedEventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.Show();
-            this.Hide();
+            base.OnFormClosed(e);
+            LiberarRecursosRespiracion();
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void btniniciar_Click_1(object sender, EventArgs e)
@@ -242,12 +246,13 @@ namespace PausasActivas.Modulos
             }
 
             IniciarRespiracion();
+        }
 
+        private void btnPin_Click(object sender, EventArgs e)
+        {
+            this.TopMost = !this.TopMost;
+            btnPin.FillColor = this.TopMost ? Color.FromArgb(16, 3, 99) : Color.Transparent;
+            btnPin.ForeColor = this.TopMost ? Color.White : Color.FromArgb(16, 3, 99);
         }
     }
 }
-
-
-
-        
-    

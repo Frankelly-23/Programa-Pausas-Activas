@@ -31,7 +31,8 @@ namespace PausasActivas.Modulos
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer1;
         private Guna.UI2.WinForms.Guna2ProgressBar TemporizadorBar;
-        private Label Volver;
+        private Guna.UI2.WinForms.Guna2Button btnVolver;
+        private Panel panelHeader;
         private System.ComponentModel.IContainer components;
 
         public OsteoForm()
@@ -59,7 +60,13 @@ namespace PausasActivas.Modulos
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges ceVolver = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges ceVolverShadow = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges cePin1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges cePin2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
+            panelHeader = new Panel();
+            btnPin = new Guna.UI2.WinForms.Guna2Button();
             botonCuello = new Guna.UI2.WinForms.Guna2Button();
             BotonMuñeca = new Guna.UI2.WinForms.Guna2Button();
             BotonEspalda = new Guna.UI2.WinForms.Guna2Button();
@@ -71,16 +78,43 @@ namespace PausasActivas.Modulos
             BotonAnterior = new Guna.UI2.WinForms.Guna2Button();
             timer1 = new System.Windows.Forms.Timer(components);
             TemporizadorBar = new Guna.UI2.WinForms.Guna2ProgressBar();
-            Volver = new Label();
+            btnVolver = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
+            //
+            //
+            // panelHeader
+            //
+            panelHeader.BackColor = Color.FromArgb(171, 217, 244);
+            panelHeader.Dock = DockStyle.Top;
+            panelHeader.Height = 80;
+            panelHeader.Name = "panelHeader";
+            panelHeader.Controls.Add(btnPin);
+            panelHeader.Controls.Add(label1);
+            //
+            // btnPin
+            //
+            btnPin.Animated = true;
+            btnPin.BorderRadius = 12;
+            btnPin.CustomizableEdges = cePin1;
+            btnPin.FillColor = Color.Transparent;
+            btnPin.Font = new Font("Segoe UI Emoji", 14F);
+            btnPin.ForeColor = Color.FromArgb(16, 3, 99);
+            btnPin.HoverState.FillColor = Color.FromArgb(140, 195, 235);
+            btnPin.Location = new Point(860, 18);
+            btnPin.Name = "btnPin";
+            btnPin.ShadowDecoration.CustomizableEdges = cePin2;
+            btnPin.Size = new Size(50, 42);
+            btnPin.TabIndex = 99;
+            btnPin.Text = "📌";
+            btnPin.Click += btnPin_Click;
             //
             // label1
             //
             label1.AutoSize = true;
-            label1.Font = new Font("Lora", 28.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(16, 3, 99);
-            label1.Location = new Point(171, 21);
+            label1.Location = new Point(20, 18);
             label1.Name = "label1";
             label1.Size = new Size(618, 71);
             label1.TabIndex = 0;
@@ -90,14 +124,14 @@ namespace PausasActivas.Modulos
             //
             botonCuello.Animated = true;
             botonCuello.BackColor = Color.Transparent;
-            botonCuello.BorderRadius = 20;
+            botonCuello.BorderRadius = 12;
             botonCuello.CustomizableEdges = customizableEdges15;
             botonCuello.DisabledState.BorderColor = Color.DarkGray;
             botonCuello.DisabledState.CustomBorderColor = Color.DarkGray;
             botonCuello.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             botonCuello.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             botonCuello.FillColor = Color.FromArgb(109, 158, 226);
-            botonCuello.Font = new Font("Nunito Sans Normal", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            botonCuello.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             botonCuello.ForeColor = Color.Black;
             botonCuello.Location = new Point(89, 117);
             botonCuello.Name = "botonCuello";
@@ -111,14 +145,14 @@ namespace PausasActivas.Modulos
             //
             BotonMuñeca.Animated = true;
             BotonMuñeca.BackColor = Color.Transparent;
-            BotonMuñeca.BorderRadius = 20;
+            BotonMuñeca.BorderRadius = 12;
             BotonMuñeca.CustomizableEdges = customizableEdges17;
             BotonMuñeca.DisabledState.BorderColor = Color.DarkGray;
             BotonMuñeca.DisabledState.CustomBorderColor = Color.DarkGray;
             BotonMuñeca.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             BotonMuñeca.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             BotonMuñeca.FillColor = Color.FromArgb(109, 158, 226);
-            BotonMuñeca.Font = new Font("Nunito Sans Normal", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BotonMuñeca.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             BotonMuñeca.ForeColor = Color.Black;
             BotonMuñeca.Location = new Point(352, 117);
             BotonMuñeca.Name = "BotonMuñeca";
@@ -132,14 +166,14 @@ namespace PausasActivas.Modulos
             //
             BotonEspalda.Animated = true;
             BotonEspalda.BackColor = Color.Transparent;
-            BotonEspalda.BorderRadius = 20;
+            BotonEspalda.BorderRadius = 12;
             BotonEspalda.CustomizableEdges = customizableEdges19;
             BotonEspalda.DisabledState.BorderColor = Color.DarkGray;
             BotonEspalda.DisabledState.CustomBorderColor = Color.DarkGray;
             BotonEspalda.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             BotonEspalda.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             BotonEspalda.FillColor = Color.FromArgb(109, 158, 226);
-            BotonEspalda.Font = new Font("Nunito Sans Normal", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BotonEspalda.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             BotonEspalda.ForeColor = Color.Black;
             BotonEspalda.Location = new Point(627, 117);
             BotonEspalda.Name = "BotonEspalda";
@@ -151,8 +185,10 @@ namespace PausasActivas.Modulos
             //
             // pictureBox1
             //
+            pictureBox1.BackColor = Color.FromArgb(230, 240, 250);
             pictureBox1.Location = new Point(50, 226);
             pictureBox1.Name = "pictureBox1";
+            pictureBox1.Padding = new Padding(6);
             pictureBox1.Size = new Size(798, 162);
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
@@ -160,7 +196,7 @@ namespace PausasActivas.Modulos
             // LabelEstiramiento
             //
             LabelEstiramiento.AutoSize = true;
-            LabelEstiramiento.Font = new Font("Lora", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LabelEstiramiento.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             LabelEstiramiento.ForeColor = Color.FromArgb(16, 3, 99);
             LabelEstiramiento.Location = new Point(41, 413);
             LabelEstiramiento.Name = "LabelEstiramiento";
@@ -171,7 +207,7 @@ namespace PausasActivas.Modulos
             // LabelPaso
             //
             LabelPaso.AutoSize = true;
-            LabelPaso.Font = new Font("Lora", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LabelPaso.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             LabelPaso.ForeColor = Color.FromArgb(16, 3, 99);
             LabelPaso.Location = new Point(50, 552);
             LabelPaso.Name = "LabelPaso";
@@ -183,7 +219,7 @@ namespace PausasActivas.Modulos
             //
             BotonSiguiente.Animated = true;
             BotonSiguiente.BackColor = Color.Transparent;
-            BotonSiguiente.BorderRadius = 20;
+            BotonSiguiente.BorderRadius = 12;
             BotonSiguiente.CustomizableEdges = customizableEdges21;
             BotonSiguiente.DisabledState.BorderColor = Color.DarkGray;
             BotonSiguiente.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -191,7 +227,7 @@ namespace PausasActivas.Modulos
             BotonSiguiente.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             BotonSiguiente.Enabled = false;
             BotonSiguiente.FillColor = Color.FromArgb(109, 158, 226);
-            BotonSiguiente.Font = new Font("Nunito Sans Normal", 14F, FontStyle.Bold);
+            BotonSiguiente.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             BotonSiguiente.ForeColor = Color.Black;
             BotonSiguiente.Location = new Point(579, 620);
             BotonSiguiente.Name = "BotonSiguiente";
@@ -205,7 +241,7 @@ namespace PausasActivas.Modulos
             //
             BotonPausa.Animated = true;
             BotonPausa.BackColor = Color.Transparent;
-            BotonPausa.BorderRadius = 20;
+            BotonPausa.BorderRadius = 12;
             BotonPausa.CustomizableEdges = customizableEdges23;
             BotonPausa.DisabledState.BorderColor = Color.DarkGray;
             BotonPausa.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -213,7 +249,7 @@ namespace PausasActivas.Modulos
             BotonPausa.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             BotonPausa.Enabled = false;
             BotonPausa.FillColor = Color.FromArgb(109, 158, 226);
-            BotonPausa.Font = new Font("Nunito Sans Normal", 14F, FontStyle.Bold);
+            BotonPausa.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             BotonPausa.ForeColor = Color.Black;
             BotonPausa.Location = new Point(427, 620);
             BotonPausa.Name = "BotonPausa";
@@ -227,7 +263,7 @@ namespace PausasActivas.Modulos
             //
             BotonAnterior.Animated = true;
             BotonAnterior.BackColor = Color.Transparent;
-            BotonAnterior.BorderRadius = 20;
+            BotonAnterior.BorderRadius = 12;
             BotonAnterior.CustomizableEdges = customizableEdges25;
             BotonAnterior.DisabledState.BorderColor = Color.DarkGray;
             BotonAnterior.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -235,7 +271,7 @@ namespace PausasActivas.Modulos
             BotonAnterior.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             BotonAnterior.Enabled = false;
             BotonAnterior.FillColor = Color.FromArgb(109, 158, 226);
-            BotonAnterior.Font = new Font("Nunito Sans Normal", 14F, FontStyle.Bold);
+            BotonAnterior.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             BotonAnterior.ForeColor = Color.Black;
             BotonAnterior.Location = new Point(271, 620);
             BotonAnterior.Name = "BotonAnterior";
@@ -265,23 +301,31 @@ namespace PausasActivas.Modulos
             TemporizadorBar.Text = "guna2ProgressBar1";
             TemporizadorBar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             //
-            // Volver
+            // btnVolver
             //
-            Volver.AutoSize = true;
-            Volver.Font = new Font("Lora", 28.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Volver.ForeColor = Color.FromArgb(16, 3, 99);
-            Volver.Location = new Point(12, 9);
-            Volver.Name = "Volver";
-            Volver.Size = new Size(73, 71);
-            Volver.TabIndex = 14;
-            Volver.Text = "←";
-            Volver.Click += Volver_Click;
+            btnVolver.Animated = true;
+            btnVolver.BorderRadius = 12;
+            btnVolver.CustomizableEdges = ceVolver;
+            btnVolver.FillColor = Color.Transparent;
+            btnVolver.Font = new Font("Segoe UI", 10F);
+            btnVolver.ForeColor = Color.FromArgb(91, 104, 140);
+            btnVolver.HoverState.FillColor = Color.FromArgb(230, 240, 250);
+            btnVolver.HoverState.ForeColor = Color.FromArgb(16, 3, 99);
+            btnVolver.Location = new Point(15, 650);
+            btnVolver.Name = "btnVolver";
+            btnVolver.ShadowDecoration.CustomizableEdges = ceVolverShadow;
+            btnVolver.Size = new Size(120, 40);
+            btnVolver.TabIndex = 14;
+            btnVolver.Text = "← Volver";
+            btnVolver.Click += btnVolver_Click;
             //
             // OsteoForm
             //
             BackColor = Color.FromArgb(243, 248, 253);
             ClientSize = new Size(934, 697);
-            Controls.Add(Volver);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            Controls.Add(btnVolver);
             Controls.Add(TemporizadorBar);
             Controls.Add(BotonSiguiente);
             Controls.Add(BotonPausa);
@@ -292,7 +336,7 @@ namespace PausasActivas.Modulos
             Controls.Add(BotonEspalda);
             Controls.Add(BotonMuñeca);
             Controls.Add(botonCuello);
-            Controls.Add(label1);
+            Controls.Add(panelHeader);
             Name = "OsteoForm";
             Text = "Osteo";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -322,6 +366,7 @@ namespace PausasActivas.Modulos
             if (string.IsNullOrEmpty(carpetaActual))
                 return;
 
+            System.Media.SystemSounds.Asterisk.Play();
             string rutaImagen = Path.Combine(RutaBaseImagenes, carpetaActual, $"{prefijoArchivoActual}{paso}.jpg");
             MostrarImagenDesdeArchivo(rutaImagen);
         }
@@ -516,10 +561,18 @@ namespace PausasActivas.Modulos
             botonActivo.ForeColor = Color.White;
         }
 
-        private void Volver_Click(object sender, System.EventArgs e)
+        private void btnVolver_Click(object sender, System.EventArgs e)
         {
             timer1.Stop();
             this.Close();
         }
+
+        private void btnPin_Click(object sender, System.EventArgs e)
+        {
+            this.TopMost = !this.TopMost;
+            btnPin.FillColor = this.TopMost ? Color.FromArgb(16, 3, 99) : Color.Transparent;
+            btnPin.ForeColor = this.TopMost ? Color.White : Color.FromArgb(16, 3, 99);
+        }
+        private Guna.UI2.WinForms.Guna2Button btnPin;
     }
 }

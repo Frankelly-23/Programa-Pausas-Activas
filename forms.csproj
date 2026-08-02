@@ -16,10 +16,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Link>modulos\ImagenesOsteo\%(RecursiveDir)%(Filename)%(Extension)</Link>
     </Content>
-    <!-- Copia los sonidos del módulo de Salud Mental a la carpeta de salida -->
-    <Content Include="modulos\SaludMental\Sonidos\**\*.mp3;modulos\SaludMental\Sonidos\**\*.wav">
+    <!-- Copia los sonidos de los módulos a la carpeta de salida -->
+    <Content Include="modulos\Sonidos\**\*.mp3;modulos\Sonidos\**\*.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Link>Sonidos\%(RecursiveDir)%(Filename)%(Extension)</Link>
+    </Content>
+    <!-- Copia las imágenes del proyecto (logo UCE, etc.) a la carpeta de salida -->
+    <Content Include="images\**\*.png;images\**\*.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>images\%(RecursiveDir)%(Filename)%(Extension)</Link>
     </Content>
   </ItemGroup>
   <ItemGroup>

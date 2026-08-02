@@ -2,7 +2,7 @@ using System.Windows.Forms;
 
 namespace PausasActivas.Modulos
 {
-    partial class Form1
+    partial class SaludMentalForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -36,6 +36,10 @@ namespace PausasActivas.Modulos
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges ceVolver = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges ceVolverShadow = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges cePin1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges cePin2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             label2 = new Label();
             label1 = new Label();
@@ -54,7 +58,8 @@ namespace PausasActivas.Modulos
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            button1 = new Button();
+            btnVolver = new Guna.UI2.WinForms.Guna2Button();
+            btnPin = new Guna.UI2.WinForms.Guna2Button();
             panel1.SuspendLayout();
             guna2ShadowPanel1.SuspendLayout();
             guna2ShadowPanel2.SuspendLayout();
@@ -64,20 +69,38 @@ namespace PausasActivas.Modulos
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(171, 217, 244);
+            panel1.Controls.Add(btnPin);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1344, 198);
+            panel1.Size = new Size(1344, 120);
             panel1.TabIndex = 0;
+            // 
+            // btnPin
+            // 
+            btnPin.Animated = true;
+            btnPin.BorderRadius = 12;
+            btnPin.CustomizableEdges = cePin1;
+            btnPin.FillColor = Color.Transparent;
+            btnPin.Font = new Font("Segoe UI Emoji", 14F);
+            btnPin.ForeColor = Color.FromArgb(16, 3, 99);
+            btnPin.HoverState.FillColor = Color.FromArgb(140, 195, 235);
+            btnPin.Location = new Point(1270, 20);
+            btnPin.Name = "btnPin";
+            btnPin.ShadowDecoration.CustomizableEdges = cePin2;
+            btnPin.Size = new Size(50, 42);
+            btnPin.TabIndex = 99;
+            btnPin.Text = "📌";
+            btnPin.Click += btnPin_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(16, 3, 99);
-            label2.Location = new Point(550, 115);
+            label2.Location = new Point(24, 68);
             label2.Name = "label2";
             label2.Size = new Size(265, 32);
             label2.TabIndex = 1;
@@ -86,9 +109,9 @@ namespace PausasActivas.Modulos
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 22F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(16, 3, 99);
-            label1.Location = new Point(459, 18);
+            label1.Location = new Point(20, 18);
             label1.Name = "label1";
             label1.Size = new Size(442, 60);
             label1.TabIndex = 1;
@@ -295,25 +318,31 @@ namespace PausasActivas.Modulos
             guna2Button3.Text = "INGRESAR";
             guna2Button3.Click += guna2Button3_Click;
             // 
-            // button1
+            // btnVolver
             // 
-            button1.BackColor = Color.LightSteelBlue;
-            button1.ForeColor = Color.Black;
-            button1.Location = new Point(1228, 661);
-            button1.Name = "button1";
-            button1.Size = new Size(104, 39);
-            button1.TabIndex = 7;
-            button1.Text = "SALIR";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnVolver.Animated = true;
+            btnVolver.BorderRadius = 12;
+            btnVolver.CustomizableEdges = ceVolver;
+            btnVolver.FillColor = Color.Transparent;
+            btnVolver.Font = new Font("Segoe UI", 10F);
+            btnVolver.ForeColor = Color.FromArgb(91, 104, 140);
+            btnVolver.HoverState.FillColor = Color.FromArgb(230, 240, 250);
+            btnVolver.HoverState.ForeColor = Color.FromArgb(16, 3, 99);
+            btnVolver.Location = new Point(15, 660);
+            btnVolver.Name = "btnVolver";
+            btnVolver.ShadowDecoration.CustomizableEdges = ceVolverShadow;
+            btnVolver.Size = new Size(120, 40);
+            btnVolver.TabIndex = 99;
+            btnVolver.Text = "← Volver";
+            btnVolver.Click += btnVolver_Click;
             // 
-            // Form1
+            // SaludMentalForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1344, 712);
-            Controls.Add(button1);
+            Controls.Add(btnVolver);
             Controls.Add(guna2Button3);
             Controls.Add(guna2Button2);
             Controls.Add(guna2Button1);
@@ -322,9 +351,10 @@ namespace PausasActivas.Modulos
             Controls.Add(guna2ShadowPanel1);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Name = "Form1";
+            MaximizeBox = false;
+            Name = "SaludMentalForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Software ergonomico";
+            Text = "Salud Mental";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             guna2ShadowPanel1.ResumeLayout(false);
@@ -356,6 +386,7 @@ namespace PausasActivas.Modulos
         private Label label10;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
-        private Button button1;
+        private Guna.UI2.WinForms.Guna2Button btnVolver;
+        private Guna.UI2.WinForms.Guna2Button btnPin;
     }
 }

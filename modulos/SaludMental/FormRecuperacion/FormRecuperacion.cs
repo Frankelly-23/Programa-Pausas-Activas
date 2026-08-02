@@ -9,14 +9,12 @@ namespace PausasActivas.Modulos
 {
     public partial class FormRecuperacion : Form
     {
-
         public FormRecuperacion()
         {
             InitializeComponent();
             ConectarEventosRespiracion();
             IniciarRespiracionRecuperacion();
             PausarRespiracionRecuperacion();
-
         }
 
 
@@ -233,12 +231,22 @@ namespace PausasActivas.Modulos
             DetenerSonidoRecuperacion();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        protected override void OnFormClosed(FormClosedEventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.Show();
-            this.Hide();
+            base.OnFormClosed(e);
+            LiberarRecursosRespiracion();
         }
 
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnPin_Click(object sender, EventArgs e)
+        {
+            this.TopMost = !this.TopMost;
+            btnPin.FillColor = this.TopMost ? Color.FromArgb(16, 3, 99) : Color.Transparent;
+            btnPin.ForeColor = this.TopMost ? Color.White : Color.FromArgb(16, 3, 99);
+        }
     }
 }

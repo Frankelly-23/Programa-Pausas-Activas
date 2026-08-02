@@ -1,5 +1,7 @@
 using System;
+using System.Drawing;
 using System.Windows.Forms;
+using System.IO;
 using PausasActivas.Modulos;
 
 namespace PausasActivas
@@ -9,6 +11,9 @@ namespace PausasActivas
         public MainForm()
         {
                 InitializeComponent();
+                string logoPath = Path.Combine(Application.StartupPath, "images", "uce_logo.png");
+                if (File.Exists(logoPath))
+                    picLogo.Image = Image.FromFile(logoPath);
         }
 
         // ── Equipo 1 ──────────────────────────────────────────
@@ -38,6 +43,14 @@ namespace PausasActivas
         {
             using (var modulo = new SedentarismoForm())
                 modulo.ShowDialog(this);
+        }
+
+        // ── Botón Pin (Always on top) ──────────────────────────
+        private void btnPin_Click(object sender, EventArgs e)
+        {
+            this.TopMost = !this.TopMost;
+            btnPin.FillColor = this.TopMost ? Color.FromArgb(16, 3, 99) : Color.Transparent;
+            btnPin.ForeColor = this.TopMost ? Color.White : Color.FromArgb(16, 3, 99);
         }
     }
 }

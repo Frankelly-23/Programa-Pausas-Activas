@@ -43,6 +43,12 @@ namespace PausasActivas.Modulos
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges ceVolver = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges ceVolverShadow = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges cePin1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges cePin2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            btnVolver = new Guna.UI2.WinForms.Guna2Button();
+            btnPin = new Guna.UI2.WinForms.Guna2Button();
             panel1 = new Panel();
             label1 = new Label();
             guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
@@ -65,7 +71,7 @@ namespace PausasActivas.Modulos
             btncampanas = new Guna.UI2.WinForms.Guna2Button();
             barravolumen = new Guna.UI2.WinForms.Guna2TrackBar();
             lblvolumen = new Label();
-            button1 = new Button();
+            btnVolver = new Guna.UI2.WinForms.Guna2Button();
             panel1.SuspendLayout();
             guna2ShadowPanel1.SuspendLayout();
             SuspendLayout();
@@ -73,19 +79,37 @@ namespace PausasActivas.Modulos
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(171, 217, 244);
+            panel1.Controls.Add(btnPin);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(913, 157);
+            panel1.Size = new Size(913, 120);
             panel1.TabIndex = 0;
+            // 
+            // btnPin
+            // 
+            btnPin.Animated = true;
+            btnPin.BorderRadius = 12;
+            btnPin.CustomizableEdges = cePin1;
+            btnPin.FillColor = Color.Transparent;
+            btnPin.Font = new Font("Segoe UI Emoji", 14F);
+            btnPin.ForeColor = Color.FromArgb(16, 3, 99);
+            btnPin.HoverState.FillColor = Color.FromArgb(140, 195, 235);
+            btnPin.Location = new Point(840, 20);
+            btnPin.Name = "btnPin";
+            btnPin.ShadowDecoration.CustomizableEdges = cePin2;
+            btnPin.Size = new Size(50, 42);
+            btnPin.TabIndex = 99;
+            btnPin.Text = "📌";
+            btnPin.Click += btnPin_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 34F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(16, 3, 99);
-            label1.Location = new Point(264, 31);
+            label1.Location = new Point(20, 25);
             label1.Name = "label1";
             label1.Size = new Size(383, 91);
             label1.TabIndex = 1;
@@ -259,11 +283,10 @@ namespace PausasActivas.Modulos
             // 
             btnsin.BorderRadius = 10;
             btnsin.CustomizableEdges = customizableEdges6;
-            btnsin.DisabledState.BorderColor = Color.DarkGray;
-            btnsin.DisabledState.CustomBorderColor = Color.DarkGray;
             btnsin.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnsin.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnsin.FillColor = Color.LightSteelBlue;
+            btnsin.FillColor = Color.FromArgb(171, 217, 244);
+            btnsin.BorderRadius = 12;
             btnsin.Font = new Font("Segoe UI", 9F);
             btnsin.ForeColor = Color.FromArgb(16, 3, 99);
             btnsin.Location = new Point(383, 672);
@@ -286,11 +309,10 @@ namespace PausasActivas.Modulos
             // 
             btnnaturaleza.BorderRadius = 10;
             btnnaturaleza.CustomizableEdges = customizableEdges8;
-            btnnaturaleza.DisabledState.BorderColor = Color.DarkGray;
-            btnnaturaleza.DisabledState.CustomBorderColor = Color.DarkGray;
             btnnaturaleza.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnnaturaleza.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnnaturaleza.FillColor = Color.LightSteelBlue;
+            btnnaturaleza.FillColor = Color.FromArgb(171, 217, 244);
+            btnnaturaleza.BorderRadius = 12;
             btnnaturaleza.Font = new Font("Segoe UI", 9F);
             btnnaturaleza.ForeColor = Color.FromArgb(16, 3, 99);
             btnnaturaleza.Location = new Point(532, 672);
@@ -304,11 +326,10 @@ namespace PausasActivas.Modulos
             // 
             btnlluvia.BorderRadius = 10;
             btnlluvia.CustomizableEdges = customizableEdges10;
-            btnlluvia.DisabledState.BorderColor = Color.DarkGray;
-            btnlluvia.DisabledState.CustomBorderColor = Color.DarkGray;
             btnlluvia.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnlluvia.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnlluvia.FillColor = Color.LightSteelBlue;
+            btnlluvia.FillColor = Color.FromArgb(171, 217, 244);
+            btnlluvia.BorderRadius = 12;
             btnlluvia.Font = new Font("Segoe UI", 9F);
             btnlluvia.ForeColor = Color.FromArgb(16, 3, 99);
             btnlluvia.Location = new Point(678, 672);
@@ -322,11 +343,10 @@ namespace PausasActivas.Modulos
             // 
             btncampanas.BorderRadius = 10;
             btncampanas.CustomizableEdges = customizableEdges12;
-            btncampanas.DisabledState.BorderColor = Color.DarkGray;
-            btncampanas.DisabledState.CustomBorderColor = Color.DarkGray;
             btncampanas.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btncampanas.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btncampanas.FillColor = Color.LightSteelBlue;
+            btncampanas.FillColor = Color.FromArgb(171, 217, 244);
+            btncampanas.BorderRadius = 12;
             btncampanas.Font = new Font("Segoe UI", 9F);
             btncampanas.ForeColor = Color.FromArgb(16, 3, 99);
             btncampanas.Location = new Point(383, 716);
@@ -354,17 +374,23 @@ namespace PausasActivas.Modulos
             lblvolumen.TabIndex = 17;
             lblvolumen.Text = "40%";
             // 
-            // button1
+            // btnVolver
             // 
-            button1.BackColor = Color.LightSlateGray;
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(795, 172);
-            button1.Name = "button1";
-            button1.Size = new Size(91, 42);
-            button1.TabIndex = 18;
-            button1.Text = "← Volver";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnVolver.Animated = true;
+            btnVolver.BorderRadius = 12;
+            btnVolver.CustomizableEdges = ceVolver;
+            btnVolver.FillColor = Color.Transparent;
+            btnVolver.Font = new Font("Segoe UI", 10F);
+            btnVolver.ForeColor = Color.FromArgb(91, 104, 140);
+            btnVolver.HoverState.FillColor = Color.FromArgb(230, 240, 250);
+            btnVolver.HoverState.ForeColor = Color.FromArgb(16, 3, 99);
+            btnVolver.Location = new Point(20, 785);
+            btnVolver.Name = "btnVolver";
+            btnVolver.ShadowDecoration.CustomizableEdges = ceVolverShadow;
+            btnVolver.Size = new Size(120, 40);
+            btnVolver.TabIndex = 99;
+            btnVolver.Text = "← Volver";
+            btnVolver.Click += btnVolver_Click;
             // 
             // FormRelajacion
             // 
@@ -372,7 +398,7 @@ namespace PausasActivas.Modulos
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(913, 845);
-            Controls.Add(button1);
+            Controls.Add(btnVolver);
             Controls.Add(lblvolumen);
             Controls.Add(barravolumen);
             Controls.Add(btncampanas);
@@ -391,6 +417,8 @@ namespace PausasActivas.Modulos
             Controls.Add(botonInhala);
             Controls.Add(guna2ShadowPanel1);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "FormRelajacion";
             Text = "FormRelajacion";
             panel1.ResumeLayout(false);
@@ -425,6 +453,7 @@ namespace PausasActivas.Modulos
         private Guna.UI2.WinForms.Guna2Button btncampanas;
         private Guna.UI2.WinForms.Guna2TrackBar barravolumen;
         private Label lblvolumen;
-        private Button button1;
+        private Guna.UI2.WinForms.Guna2Button btnVolver;
+        private Guna.UI2.WinForms.Guna2Button btnPin;
     }
 }

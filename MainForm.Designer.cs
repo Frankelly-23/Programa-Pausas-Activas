@@ -1,5 +1,6 @@
 using System.Drawing;
 using System.Windows.Forms;
+using System.IO;
 
 namespace PausasActivas
 {
@@ -26,6 +27,8 @@ namespace PausasActivas
         private Guna.UI2.WinForms.Guna2Button btnOsteo;
         private Guna.UI2.WinForms.Guna2Button btnSaludMental;
         private Guna.UI2.WinForms.Guna2Button btnSedentarismo;
+        private PictureBox picLogo;
+        private Guna.UI2.WinForms.Guna2Button btnPin;
 
         protected override void Dispose(bool disposing)
         {
@@ -44,12 +47,17 @@ namespace PausasActivas
             Guna.UI2.WinForms.Suite.CustomizableEdges ce6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges ce7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges ce8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges cePin1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges cePin2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
 
             components = new System.ComponentModel.Container();
 
             panelHeader = new Panel();
             lblTitulo = new Label();
             lblSubtitulo = new Label();
+            picLogo = new PictureBox();
+            btnPin = new Guna.UI2.WinForms.Guna2Button();
+            ((System.ComponentModel.ISupportInitialize)(picLogo)).BeginInit();
 
             panelTemporizadores = new Guna.UI2.WinForms.Guna2ShadowPanel();
             panelOsteo = new Guna.UI2.WinForms.Guna2ShadowPanel();
@@ -75,44 +83,71 @@ namespace PausasActivas
             panelOsteo.SuspendLayout();
             panelSaludMental.SuspendLayout();
             panelSedentarismo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(picLogo)).BeginInit();
             SuspendLayout();
 
             // ── panelHeader ──────────────────────────────────────
             panelHeader.BackColor = Color.FromArgb(171, 217, 244);
+            panelHeader.Controls.Add(btnPin);
             panelHeader.Controls.Add(lblSubtitulo);
             panelHeader.Controls.Add(lblTitulo);
+            panelHeader.Controls.Add(picLogo);
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(900, 130);
+            panelHeader.Size = new Size(900, 160);
             panelHeader.TabIndex = 0;
+
+            // ── btnPin ───────────────────────────────────────────
+            btnPin.Animated = true;
+            btnPin.BorderRadius = 12;
+            btnPin.CustomizableEdges = cePin1;
+            btnPin.FillColor = Color.Transparent;
+            btnPin.Font = new Font("Segoe UI Emoji", 14F);
+            btnPin.ForeColor = Color.FromArgb(16, 3, 99);
+            btnPin.HoverState.FillColor = Color.FromArgb(140, 195, 235);
+            btnPin.Location = new Point(830, 20);
+            btnPin.Name = "btnPin";
+            btnPin.ShadowDecoration.CustomizableEdges = cePin2;
+            btnPin.Size = new Size(50, 42);
+            btnPin.TabIndex = 99;
+            btnPin.Text = "📌";
+            btnPin.Click += btnPin_Click;
+
+            // ── picLogo ──────────────────────────────────────────
+            picLogo.Location = new Point(30, 40);
+            picLogo.Name = "picLogo";
+            picLogo.Size = new Size(80, 80);
+            picLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            picLogo.TabIndex = 2;
+            picLogo.TabStop = false;
 
             // ── lblTitulo ────────────────────────────────────────
             lblTitulo.AutoSize = true;
-            lblTitulo.Font = new Font("Segoe UI", 22F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTitulo.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitulo.ForeColor = Color.FromArgb(16, 3, 99);
-            lblTitulo.Location = new Point(270, 18);
+            lblTitulo.Location = new Point(130, 40);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(370, 60);
+            lblTitulo.Size = new Size(325, 54);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Software Ergonómico";
 
             // ── lblSubtitulo ─────────────────────────────────────
             lblSubtitulo.AutoSize = true;
-            lblSubtitulo.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSubtitulo.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblSubtitulo.ForeColor = Color.FromArgb(16, 3, 99);
-            lblSubtitulo.Location = new Point(310, 80);
+            lblSubtitulo.Location = new Point(130, 95);
             lblSubtitulo.Name = "lblSubtitulo";
-            lblSubtitulo.Size = new Size(290, 32);
+            lblSubtitulo.Size = new Size(360, 28);
             lblSubtitulo.TabIndex = 1;
-            lblSubtitulo.Text = "Seleccione un módulo";
+            lblSubtitulo.Text = "Ergonomía y Factores Humanos — UCE";
 
             // ── panelTemporizadores ──────────────────────────────
             panelTemporizadores.BackColor = Color.Transparent;
             panelTemporizadores.Controls.Add(lblTempTitulo);
             panelTemporizadores.Controls.Add(lblTempDesc);
             panelTemporizadores.FillColor = Color.AliceBlue;
-            panelTemporizadores.Location = new Point(40, 160);
+            panelTemporizadores.Location = new Point(40, 195);
             panelTemporizadores.Name = "panelTemporizadores";
             panelTemporizadores.Radius = 20;
             panelTemporizadores.ShadowColor = Color.Gray;
@@ -145,7 +180,7 @@ namespace PausasActivas
             panelOsteo.Controls.Add(lblOsteoTitulo);
             panelOsteo.Controls.Add(lblOsteoDesc);
             panelOsteo.FillColor = Color.AliceBlue;
-            panelOsteo.Location = new Point(470, 160);
+            panelOsteo.Location = new Point(470, 195);
             panelOsteo.Name = "panelOsteo";
             panelOsteo.Radius = 20;
             panelOsteo.ShadowColor = Color.Gray;
@@ -178,7 +213,7 @@ namespace PausasActivas
             panelSaludMental.Controls.Add(lblMentalTitulo);
             panelSaludMental.Controls.Add(lblMentalDesc);
             panelSaludMental.FillColor = Color.AliceBlue;
-            panelSaludMental.Location = new Point(40, 360);
+            panelSaludMental.Location = new Point(40, 400);
             panelSaludMental.Name = "panelSaludMental";
             panelSaludMental.Radius = 20;
             panelSaludMental.ShadowColor = Color.Gray;
@@ -211,7 +246,7 @@ namespace PausasActivas
             panelSedentarismo.Controls.Add(lblSedTitulo);
             panelSedentarismo.Controls.Add(lblSedDesc);
             panelSedentarismo.FillColor = Color.AliceBlue;
-            panelSedentarismo.Location = new Point(470, 360);
+            panelSedentarismo.Location = new Point(470, 400);
             panelSedentarismo.Name = "panelSedentarismo";
             panelSedentarismo.Radius = 20;
             panelSedentarismo.ShadowColor = Color.Gray;
@@ -249,7 +284,7 @@ namespace PausasActivas
             btnTemporizadores.FillColor = Color.FromArgb(171, 217, 244);
             btnTemporizadores.Font = new Font("Segoe UI", 9F);
             btnTemporizadores.ForeColor = Color.FromArgb(16, 3, 99);
-            btnTemporizadores.Location = new Point(95, 315);
+            btnTemporizadores.Location = new Point(95, 350);
             btnTemporizadores.Name = "btnTemporizadores";
             btnTemporizadores.ShadowDecoration.CustomizableEdges = ce2;
             btnTemporizadores.Size = new Size(270, 45);
@@ -267,7 +302,7 @@ namespace PausasActivas
             btnOsteo.FillColor = Color.FromArgb(171, 217, 244);
             btnOsteo.Font = new Font("Segoe UI", 9F);
             btnOsteo.ForeColor = Color.FromArgb(16, 3, 99);
-            btnOsteo.Location = new Point(525, 315);
+            btnOsteo.Location = new Point(525, 350);
             btnOsteo.Name = "btnOsteo";
             btnOsteo.ShadowDecoration.CustomizableEdges = ce4;
             btnOsteo.Size = new Size(270, 45);
@@ -285,7 +320,7 @@ namespace PausasActivas
             btnSaludMental.FillColor = Color.FromArgb(171, 217, 244);
             btnSaludMental.Font = new Font("Segoe UI", 9F);
             btnSaludMental.ForeColor = Color.FromArgb(16, 3, 99);
-            btnSaludMental.Location = new Point(95, 515);
+            btnSaludMental.Location = new Point(95, 555);
             btnSaludMental.Name = "btnSaludMental";
             btnSaludMental.ShadowDecoration.CustomizableEdges = ce6;
             btnSaludMental.Size = new Size(270, 45);
@@ -303,7 +338,7 @@ namespace PausasActivas
             btnSedentarismo.FillColor = Color.FromArgb(171, 217, 244);
             btnSedentarismo.Font = new Font("Segoe UI", 9F);
             btnSedentarismo.ForeColor = Color.FromArgb(16, 3, 99);
-            btnSedentarismo.Location = new Point(525, 515);
+            btnSedentarismo.Location = new Point(525, 555);
             btnSedentarismo.Name = "btnSedentarismo";
             btnSedentarismo.ShadowDecoration.CustomizableEdges = ce8;
             btnSedentarismo.Size = new Size(270, 45);
@@ -315,7 +350,7 @@ namespace PausasActivas
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(900, 600);
+            ClientSize = new Size(900, 700);
             Controls.Add(btnSedentarismo);
             Controls.Add(btnSaludMental);
             Controls.Add(btnOsteo);
@@ -341,6 +376,7 @@ namespace PausasActivas
             panelSaludMental.PerformLayout();
             panelSedentarismo.ResumeLayout(false);
             panelSedentarismo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(picLogo)).EndInit();
             ResumeLayout(false);
         }
     }
